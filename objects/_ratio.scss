@@ -1,0 +1,43 @@
+$aml-ratios: (
+    (2:1),
+    (4:3),
+    (16:9),
+) !default;
+
+.#{$aml-ns}Ratio {
+    position: relative;
+    display: block;
+
+    &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+}
+
+.#{$aml-ns}Ratio-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@each $ratio in $aml-ratios {
+    @each $antecedent, $consequent in $ratio {
+        @if (type-of($antecedent) != number) {
+            @error "`#{$antecedent}` needs to be a number.";
+        }
+
+        @if (type-of($consequent) != number) {
+            @error "`#{$consequent}` needs to be a number.";
+        }
+
+        .#{$aml-ns}Ratio--#{$antecedent}\:#{$consequent}:before {
+            padding-bottom: ($consequent/$antecedent) * 100%;
+        }
+    }
+}

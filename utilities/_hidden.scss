@@ -1,0 +1,34 @@
+
+.u-#{$aml-ns}hidden {
+    visibility: hidden #{$aml-important};
+    display: none #{$aml-important};
+}
+
+.u-#{$aml-ns}hidden\@no-js {
+    .no-js & {
+        @extend .u-#{$aml-ns}hidden;
+    }
+}
+
+@media print {
+    .u-#{$aml-ns}hidden\@print {
+        visibility: hidden #{$aml-important};
+        display: none #{$aml-important};
+    }
+}
+
+@each $name, $size in $aml-breakpoints {
+    @include bp($name) {
+        .u-#{$aml-ns}hidden\@#{$name} {
+            visibility: hidden #{$aml-important};
+            display: none #{$aml-important};
+        }
+    }
+
+    @include bp-max($name) {
+        .u-#{$aml-ns}hidden\@max-#{$name} {
+            visibility: hidden #{$aml-important};
+            display: none #{$aml-important};
+        }
+    }
+}

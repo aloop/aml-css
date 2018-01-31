@@ -1,0 +1,5 @@
+.u-#{$aml-ns}breakWord {
+    overflow-wrap: break-word #{$aml-important};
+    word-wrap: break-word #{$aml-important};
+    word-break: break-all #{$aml-important};
+}

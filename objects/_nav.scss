@@ -1,0 +1,16 @@
+.#{$aml-ns}Nav {
+    list-style-type: none;
+    padding: 0;
+
+    > li {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0;
+    }
+}
+
+.#{$aml-ns}Nav--stacked {
+    > li {
+        display: block;
+    }
+}

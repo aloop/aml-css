@@ -1,0 +1,10 @@
+a {
+    display: inline-block;
+    text-decoration: $aml-link-decoration;
+    color: $aml-link-color;
+
+    &:hover, &:active {
+        text-decoration: $aml-link-decoration-hover;
+        color: $aml-link-color-hover;
+    }
+}

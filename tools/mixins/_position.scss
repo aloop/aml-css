@@ -1,0 +1,37 @@
+// `$positions` optionally takes a list with 1-4 values representing
+// top, left, right, and bottom; in that order.
+@mixin position($position, $positions: null) {
+    position: $position;
+
+    @if length($positions) >= 1 {
+        top: nth($positions, 1);
+    }
+
+    @if length($positions) >= 2 {
+        left: nth($positions, 2);
+    }
+
+    @if length($positions) >= 3 {
+        right: nth($positions, 3);
+    }
+
+    @if length($positions) == 4 {
+        bottom: nth($positions, 4);
+    }
+
+    @if length($positions) > 4 {
+        @warn "Too many arguments in list";
+    }
+}
+
+@mixin absolute($positions: null) {
+    @include position(absolute, $positions);
+}
+
+@mixin fixed($positions: null) {
+    @include position(fixed, $positions);
+}
+
+@mixin relative($positions: null) {
+    @include position(relative, $positions);
+}

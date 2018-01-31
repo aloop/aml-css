@@ -1,0 +1,19 @@
+// -- Typography
+
+// ---- General
+
+$aml-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$aml-font-size: 16px !default;
+$aml-line-height: 1.5 !default;
+$aml-font-weight: 400 !default;
+
+// ---- Headings
+
+$aml-heading-font-family: $aml-font-family !default;
+$aml-heading-font-weight: 700 !default;
+$aml-heading-spacing: $aml-spacing !default;
+
+// ---- Links
+
+$aml-link-decoration: underline !default;
+$aml-link-decoration-hover: none !default;

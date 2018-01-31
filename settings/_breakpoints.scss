@@ -1,0 +1,11 @@
+@import "../tools/functions/rem";
+
+$aml-default-media-type: all !default;
+
+$aml-breakpoints: (
+    tiny: rem(480),
+    small: rem(680),
+    medium: rem(768),
+    large: rem(960),
+    huge: rem(1200)
+) !default;

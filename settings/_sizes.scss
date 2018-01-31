@@ -1,0 +1,33 @@
+@import "../tools/functions/rem";
+
+// -- Site width
+
+// `$max-width` is used to determine the container width and the `huge`
+// media query width
+$aml-max-width: rem(1200) !default;
+
+// -- Spacing
+
+$aml-spacing: rem(20) !default;
+$aml-spacing-tiny:  $aml-spacing / 4 !default;
+$aml-spacing-small: $aml-spacing / 2 !default;
+$aml-spacing-large: $aml-spacing * 2 !default;
+$aml-spacing-huge:  $aml-spacing * 4 !default;
+
+// -- Settings for size utility classes
+
+// Denominators used to generate the common-fraction-based width classes
+$aml-denominators: 1 2 3 4 5 6 !default;
+
+// Should we generate breakpoint variants? e.g. `.u-1/2@tiny`, where `tiny` is the breakpoint
+$aml-generate-breakpoint-variants: true !default;
+
+// Both the push and pull variants add quite a bit of weight to the output, so
+// these toggle whether they are made at all.
+//
+// Another option is changing the type below to generate placeholder classes
+// so that they can be extended from instead
+$aml-generate-pushers: true !default;
+$aml-generate-pullers: true !default;
+
+$aml-size-use-placeholders: false !default;

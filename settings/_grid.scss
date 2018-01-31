@@ -1,0 +1,6 @@
+@import "../tools/functions/rem";
+
+$aml-grid-use-flexbox: true !default;
+
+$aml-grid-gutter: $aml-spacing !default;
+$aml-grid-vertical-gutter: $aml-grid-gutter !default;

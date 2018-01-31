@@ -1,0 +1,4 @@
+// -- Utility Settings
+
+$aml-immutable-utilities: true !default;
+$aml-important: if($aml-immutable-utilities, !important, "");

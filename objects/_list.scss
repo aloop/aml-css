@@ -1,0 +1,47 @@
+.#{$aml-ns}List {
+    list-style: none;
+    margin-bottom: $aml-spacing;
+}
+
+.#{$aml-ns}List--flush {
+    margin: 0;
+    padding: 0;
+
+    > li {
+        margin: 0;
+    }
+}
+
+.#{$aml-ns}List--vflush {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    > li {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+.#{$aml-ns}List--hflush {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+    > li {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.#{$aml-ns}List--nested {
+    padding-left: $aml-spacing;
+}
+
+.#{$aml-ns}List--inline {
+    > li {
+        display: inline-block;
+    }
+}

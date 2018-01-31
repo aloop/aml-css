@@ -1,0 +1,12 @@
+@import "../tools/functions/no-unit";
+
+html {
+    font-family: $aml-font-family;
+    font-size: em($aml-font-size);
+    font-weight: $aml-font-weight;
+    line-height: no-unit($aml-line-height);
+    background-color: $aml-bg-color;
+    min-height: 100%;
+    // Prevent layout jump between pages if there isn't enough content to scroll
+    overflow-y: scroll;
+}

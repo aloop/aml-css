@@ -1,0 +1,52 @@
+.#{$aml-ns}Grid {
+    width: 100%;
+
+    @if $aml-grid-use-flexbox {
+        display: flex;
+        flex-wrap: wrap;
+    } @else {
+        @include clearfix;
+    }
+
+    &.has-gutter {
+        margin-left: -$aml-grid-gutter;
+        width: calc(100% + #{$aml-grid-gutter});
+    }
+
+    // @TODO: This seems to break the layout when using sizes that equal less than 100%
+    // &.has-vertical-gutter {
+    //     margin-bottom: -$grid-gutter-size;
+    // }
+}
+
+.#{$aml-ns}Grid--noWrap {
+    flex-wrap: nowrap;
+}
+
+.#{$aml-ns}Grid--center {
+    justify-content: center;
+}
+
+.#{$aml-ns}Grid-item {
+    @if $aml-grid-use-flexbox {
+        flex: 0 0 auto;
+    } @else {
+        float: left;
+    }
+
+    width: 100%;
+
+    @if $aml-grid-use-flexbox {
+        .#{$aml-ns}Grid--grows > & {
+            flex-grow: 1;
+        }
+    }
+
+    .#{$aml-ns}Grid.has-gutter > & {
+        padding-left: $aml-grid-gutter;
+    }
+
+    .#{$aml-ns}Grid.has-verticalGutter > & {
+        padding-bottom: $aml-grid-vertical-gutter;
+    }
+}

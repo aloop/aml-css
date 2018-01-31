@@ -1,0 +1,11 @@
+img, svg {
+    display: inline-block;
+    vertical-align: bottom;
+    max-width: 100%;
+    height: auto;
+}
+
+// Remove border in IE
+a img{
+    border: 0px;
+}

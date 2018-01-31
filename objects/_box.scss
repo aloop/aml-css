@@ -1,0 +1,61 @@
+.#{$aml-ns}Box {
+    display: block;
+    padding: $aml-spacing;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.#{$aml-ns}Box--inline {
+    display: inline-block;
+}
+
+.#{$aml-ns}Box--flush {
+    padding: 0;
+}
+
+.#{$aml-ns}Box--tiny {
+    padding: $aml-spacing-tiny;
+}
+
+.#{$aml-ns}Box--small {
+    padding: $aml-spacing-small;
+}
+
+.#{$aml-ns}Box--large {
+    padding: $aml-spacing-large;
+}
+
+.#{$aml-ns}Box--huge {
+    padding: $aml-spacing-huge;
+}
+
+@each $name, $size in $aml-breakpoints {
+    @include bp($name) {
+
+        .#{$aml-ns}Box--inline\@#{$name} {
+            display: inline-block;
+        }
+
+        .#{$aml-ns}Box--flush\@#{$name} {
+            padding: 0;
+        }
+
+        .#{$aml-ns}Box--tiny\@#{$name} {
+            padding: $aml-spacing-tiny;
+        }
+
+        .#{$aml-ns}Box--small\@#{$name} {
+            padding: $aml-spacing-small;
+        }
+
+        .#{$aml-ns}Box--large\@#{$name} {
+            padding: $aml-spacing-large;
+        }
+
+        .#{$aml-ns}Box--huge\@#{$name} {
+            padding: $aml-spacing-huge;
+        }
+    }
+}

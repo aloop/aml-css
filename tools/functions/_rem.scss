@@ -1,0 +1,8 @@
+@import "strip-unit";
+
+$aml-font-size: 16px !default;
+
+// Like the built-in em function, but for rem units
+@function rem($pixels, $base-font-size: $aml-font-size) {
+  @return ($pixels / strip-unit($base-font-size)) + 0rem;
+}
