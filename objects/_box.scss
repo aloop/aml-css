@@ -23,6 +23,10 @@
     padding: $aml-spacing-small;
 }
 
+.#{$aml-ns}Box--medium {
+    padding: $aml-spacing;
+}
+
 .#{$aml-ns}Box--large {
     padding: $aml-spacing-large;
 }
@@ -48,6 +52,10 @@
 
         .#{$aml-ns}Box--small\@#{$name} {
             padding: $aml-spacing-small;
+        }
+
+        .#{$aml-ns}Box--medium\@#{$name} {
+            padding: $aml-spacing;
         }
 
         .#{$aml-ns}Box--large\@#{$name} {
