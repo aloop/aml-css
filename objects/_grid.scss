@@ -19,12 +19,14 @@
     // }
 }
 
-.#{$aml-ns}Grid--noWrap {
-    flex-wrap: nowrap;
-}
+@if $aml-grid-use-flexbox {
+    .#{$aml-ns}Grid--noWrap {
+        flex-wrap: nowrap;
+    }
 
-.#{$aml-ns}Grid--center {
-    justify-content: center;
+    .#{$aml-ns}Grid--center {
+        justify-content: center;
+    }
 }
 
 .#{$aml-ns}Grid-item {
