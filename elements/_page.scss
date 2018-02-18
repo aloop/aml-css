@@ -10,3 +10,7 @@ html {
     // Prevent layout jump between pages if there isn't enough content to scroll
     overflow-y: scroll;
 }
+
+body {
+    min-height: 100%;
+}
