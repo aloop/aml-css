@@ -15,7 +15,7 @@
 
     // @TODO: This seems to break the layout when using sizes that equal less than 100%
     &.has-vertical-gutter {
-        margin-bottom: -$grid-gutter-size;
+        margin-bottom: -$aml-grid-vertical-gutter;
     }
 }
 
