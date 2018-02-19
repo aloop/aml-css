@@ -14,9 +14,9 @@
     }
 
     // @TODO: This seems to break the layout when using sizes that equal less than 100%
-    // &.has-vertical-gutter {
-    //     margin-bottom: -$grid-gutter-size;
-    // }
+    &.has-vertical-gutter {
+        margin-bottom: -$grid-gutter-size;
+    }
 }
 
 @if $aml-grid-use-flexbox {
@@ -48,7 +48,7 @@
         padding-left: $aml-grid-gutter;
     }
 
-    .#{$aml-ns}Grid.has-verticalGutter > & {
+    .#{$aml-ns}Grid.has-vertical-gutter > & {
         padding-bottom: $aml-grid-vertical-gutter;
     }
 }
