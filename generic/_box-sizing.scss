@@ -1,3 +1,9 @@
+/**
+ * Using `inherit` instead of `border-box` allows third-party widgets to
+ * define their own box-sizing. We can set our default of `border-box` by
+ * setting it on html and letting descendents simply inherit it.
+ */
+
 *,
 *:before,
 *:after {
