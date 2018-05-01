@@ -1,9 +1,9 @@
-.#{$aml-ns}List {
+.o-#{$aml-ns}List {
     list-style: none;
     margin-bottom: $aml-spacing;
 }
 
-.#{$aml-ns}List--flush {
+.o-#{$aml-ns}List--flush {
     margin: 0;
     padding: 0;
 
@@ -12,7 +12,7 @@
     }
 }
 
-.#{$aml-ns}List--vflush {
+.o-#{$aml-ns}List--vflush {
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 0;
@@ -24,7 +24,7 @@
     }
 }
 
-.#{$aml-ns}List--hflush {
+.o-#{$aml-ns}List--hflush {
     margin-left: 0;
     margin-right: 0;
     padding-left: 0;
@@ -36,11 +36,11 @@
     }
 }
 
-.#{$aml-ns}List--nested {
+.o-#{$aml-ns}List--nested {
     padding-left: $aml-spacing;
 }
 
-.#{$aml-ns}List--inline {
+.o-#{$aml-ns}List--inline {
     > li {
         display: inline-block;
     }

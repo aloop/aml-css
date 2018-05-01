@@ -1,4 +1,4 @@
-.#{$aml-ns}Nav {
+.o-#{$aml-ns}Nav {
     list-style-type: none;
     padding: 0;
 
@@ -9,7 +9,7 @@
     }
 }
 
-.#{$aml-ns}Nav--stacked {
+.o-#{$aml-ns}Nav--stacked {
     > li {
         display: block;
     }

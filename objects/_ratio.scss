@@ -4,7 +4,7 @@ $aml-ratios: (
     (16:9),
 ) !default;
 
-.#{$aml-ns}Ratio {
+.o-#{$aml-ns}Ratio {
     position: relative;
     display: block;
 
@@ -16,7 +16,7 @@ $aml-ratios: (
     }
 }
 
-.#{$aml-ns}Ratio-content {
+.o-#{$aml-ns}Ratio-content {
     position: absolute;
     top: 0;
     left: 0;
@@ -36,7 +36,7 @@ $aml-ratios: (
             @error "`#{$consequent}` needs to be a number.";
         }
 
-        .#{$aml-ns}Ratio--#{$antecedent}\:#{$consequent}:before {
+        .o-#{$aml-ns}Ratio--#{$antecedent}\:#{$consequent}:before {
             padding-bottom: ($consequent/$antecedent) * 100%;
         }
     }

@@ -1,4 +1,4 @@
-.#{$aml-ns}Grid {
+.o-#{$aml-ns}Grid {
     width: 100%;
 
     @if $aml-grid-use-flexbox {
@@ -20,16 +20,16 @@
 }
 
 @if $aml-grid-use-flexbox {
-    .#{$aml-ns}Grid--noWrap {
+    .o-#{$aml-ns}Grid--noWrap {
         flex-wrap: nowrap;
     }
 
-    .#{$aml-ns}Grid--center {
+    .o-#{$aml-ns}Grid--center {
         justify-content: center;
     }
 }
 
-.#{$aml-ns}Grid-item {
+.o-#{$aml-ns}Grid-item {
     @if $aml-grid-use-flexbox {
         flex: 0 0 auto;
     } @else {
@@ -39,16 +39,16 @@
     width: 100%;
 
     @if $aml-grid-use-flexbox {
-        .#{$aml-ns}Grid--grows > & {
+        .o-#{$aml-ns}Grid--grows > & {
             flex-grow: 1;
         }
     }
 
-    .#{$aml-ns}Grid.has-gutter > & {
+    .o-#{$aml-ns}Grid.has-gutter > & {
         padding-left: $aml-grid-gutter;
     }
 
-    .#{$aml-ns}Grid.has-vertical-gutter > & {
+    .o-#{$aml-ns}Grid.has-vertical-gutter > & {
         padding-bottom: $aml-grid-vertical-gutter;
     }
 }

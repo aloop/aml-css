@@ -1,4 +1,4 @@
-.#{$aml-ns}Container {
+.o-#{$aml-ns}Container {
     margin-left: auto;
     margin-right: auto;
     padding-left: $aml-spacing;
@@ -6,27 +6,27 @@
     max-width: $aml-max-width;
 }
 
-.#{$aml-ns}Container--flush {
+.o-#{$aml-ns}Container--flush {
     padding-left: 0;
     padding-right: 0;
 }
 
-.#{$aml-ns}Container--tiny {
+.o-#{$aml-ns}Container--tiny {
     padding-left: $aml-spacing-tiny;
     padding-right: $aml-spacing-tiny;
 }
 
-.#{$aml-ns}Container--small {
+.o-#{$aml-ns}Container--small {
     padding-left: $aml-spacing-small;
     padding-right: $aml-spacing-small;
 }
 
-.#{$aml-ns}Container--large {
+.o-#{$aml-ns}Container--large {
     padding-left: $aml-spacing-large;
     padding-right: $aml-spacing-large;
 }
 
-.#{$aml-ns}Container--huge {
+.o-#{$aml-ns}Container--huge {
     padding-left: $aml-spacing-huge;
     padding-right: $aml-spacing-huge;
 }
