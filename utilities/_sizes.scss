@@ -10,13 +10,13 @@
                 $suffix: #{$numerator}\/#{$denominator}#{if($breakpoint, \@#{$breakpoint}, "")};
 
                 // Example output selectors: .u-3/4 or .u-1/2@large
-                .u-#{$suffix} {
+                .u-#{$aml-ns}#{$suffix} {
                     width: $size #{$aml-important};
                 }
 
                 @if $aml-generate-pushers {
                     // Example output selectors: .u-push-3/4 or .u-push-1/2@large
-                    .u-push-#{$suffix} {
+                    .u-#{$aml-ns}push-#{$suffix} {
                         position: relative #{$aml-important};
                         right: auto #{$aml-important};
                         left: $size #{$aml-important};
@@ -25,7 +25,7 @@
 
                 @if $aml-generate-pullers {
                     // Example output selectors: .u-pull-3/4 or .u-pull-1/2@large
-                    .u-pull-#{$suffix} {
+                    .u-#{$aml-ns}pull-#{$suffix} {
                         position: relative #{$aml-important};
                         right: $size #{$aml-important};
                         left: auto #{$aml-important};

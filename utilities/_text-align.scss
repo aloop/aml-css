@@ -1,11 +1,11 @@
-.u-textLeft {
+.u-#{$aml-ns}textLeft {
     text-align: left #{$aml-important};
 }
 
-.u-textCenter {
+.u-#{$aml-ns}textCenter {
     text-align: center #{$aml-important};
 }
 
-.u-textRight {
+.u-#{$aml-ns}textRight {
     text-align: right #{$aml-important};
 }
