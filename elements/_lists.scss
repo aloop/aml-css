@@ -1,11 +1,6 @@
-ul, ol {
-    padding-left: $aml-spacing;
-
-    ul, ol {
-        margin-top: $aml-spacing-small;
-    }
-}
-
-li {
-    margin-bottom: $aml-spacing-small;
+/*
+    Set a default indentation for lists.
+*/
+ul, ol, dl {
+    margin-left: $aml-list-indentation;
 }

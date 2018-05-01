@@ -14,6 +14,11 @@ $aml-spacing-small: $aml-spacing / 2 !default;
 $aml-spacing-large: $aml-spacing * 2 !default;
 $aml-spacing-huge:  $aml-spacing * 4 !default;
 
+// -- Default margin and padding
+
+$aml-default-margin: $aml-spacing;
+$aml-default-padding: $aml-spacing;
+
 // -- Settings for size utility classes
 
 // Denominators used to generate the common-fraction-based width classes
