@@ -1,6 +1,6 @@
 # AML CSS
 
-This is a personal project, based heavily on things like ITCSS and SUITCSS. I don't really recommend anyone else use it at the moment. Class names and attributes aren't really stable at the moment.
+This is a personal project, based heavily on things like ITCSS and SUITCSS. I don't really recommend anyone else use it at the moment. Class names and attributes aren't really stable.
 
 ## TODO
 
