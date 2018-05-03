@@ -16,8 +16,12 @@ $aml-spacing-huge:  $aml-spacing * 4 !default;
 
 // -- Default margin and padding
 
-$aml-default-margin: $aml-spacing;
-$aml-default-padding: $aml-spacing;
+$aml-default-margin: $aml-spacing !default;
+$aml-default-padding: $aml-spacing !default;
+
+// -- List Settings
+
+$aml-list-indentation: $aml-spacing !default;
 
 // -- Settings for size utility classes
 
