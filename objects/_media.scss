@@ -1,0 +1,48 @@
+/*
+    This object implements a common pattern where an image is placed beside some content.
+    http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+
+    This variant uses flexbox instead of floats
+*/
+
+.o-Media {
+    display: flex;
+    align-items: flex-start;
+}
+
+.o-Media-body {
+    display: block;
+    flex-grow: 1;
+
+    &,
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.o-Media-image {
+    margin-right: $aml-spacing;
+
+    img {
+        display: block;
+    }
+}
+
+/*
+    Vertically center the image and body
+*/
+.o-Media--center {
+    align-items: center;
+}
+
+/*
+    Show the image on the right side instead of the left side.
+*/
+.o-Media--reverse {
+    flex-direction: row-reverse;
+
+    > .o-Media-image {
+        margin-right: 0;
+        margin-left: $aml-spacing;
+    }
+}
