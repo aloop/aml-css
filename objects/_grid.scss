@@ -1,12 +1,8 @@
 .o-#{$aml-ns}Grid {
     width: 100%;
 
-    @if $aml-grid-use-flexbox {
-        display: flex;
-        flex-wrap: wrap;
-    } @else {
-        @include clearfix;
-    }
+    display: flex;
+    flex-wrap: wrap;
 
     &.has-gutter {
         margin-left: -$aml-grid-gutter;
@@ -19,29 +15,20 @@
     }
 }
 
-@if $aml-grid-use-flexbox {
-    .o-#{$aml-ns}Grid--noWrap {
-        flex-wrap: nowrap;
-    }
+.o-#{$aml-ns}Grid--noWrap {
+    flex-wrap: nowrap;
+}
 
-    .o-#{$aml-ns}Grid--center {
-        justify-content: center;
-    }
+.o-#{$aml-ns}Grid--center {
+    justify-content: center;
 }
 
 .o-#{$aml-ns}Grid-item {
-    @if $aml-grid-use-flexbox {
-        flex: 0 0 auto;
-    } @else {
-        float: left;
-    }
-
+    flex: 0 0 auto;
     width: 100%;
 
-    @if $aml-grid-use-flexbox {
-        .o-#{$aml-ns}Grid--grows > & {
-            flex-grow: 1;
-        }
+    .o-#{$aml-ns}Grid--grows > & {
+        flex-grow: 1;
     }
 
     .o-#{$aml-ns}Grid.has-gutter > & {

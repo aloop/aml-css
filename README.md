@@ -132,7 +132,6 @@ The following type-related variables are available to change:
 
 ### Grid
 
-* `$aml-grid-use-flexbox`: use flexbox, otherwise use floats. Defaults to true.
 * `$aml-grid-gutter`: the horizontal spacing between grid items. Defaults to `$aml-spacing`.
 * `$aml-grid-vertical-gutter`: the vertical spacing between grid items. Defaults to `$aml-grid-gutter`.
 
