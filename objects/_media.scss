@@ -5,12 +5,12 @@
     This variant uses flexbox instead of floats
 */
 
-.o-Media {
+.o-#{$aml-ns}Media {
     display: flex;
     align-items: flex-start;
 }
 
-.o-Media-body {
+.o-#{$aml-ns}Media-body {
     display: block;
     flex-grow: 1;
 
@@ -20,7 +20,7 @@
     }
 }
 
-.o-Media-image {
+.o-#{$aml-ns}Media-image {
     margin-right: $aml-spacing;
 
     img {
@@ -31,17 +31,17 @@
 /*
     Vertically center the image and body
 */
-.o-Media--center {
+.o-#{$aml-ns}Media--center {
     align-items: center;
 }
 
 /*
     Show the image on the right side instead of the left side.
 */
-.o-Media--reverse {
+.o-#{$aml-ns}Media--reverse {
     flex-direction: row-reverse;
 
-    > .o-Media-image {
+    > .o-#{$aml-ns}Media-image {
         margin-right: 0;
         margin-left: $aml-spacing;
     }
