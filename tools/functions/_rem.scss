@@ -1,5 +1,9 @@
 @import "strip-unit";
 
 @function rem($pixels, $base-font-size: $aml-font-size) {
-  @return ($pixels / strip-unit($base-font-size)) + 0rem;
+    @if not (unitless($pixels)) {
+        @error "rem: $pixels should be a unitless number, '#{$pixels}' given.";
+    }
+
+    @return ($pixels / strip-unit($base-font-size)) + 0rem;
 }
