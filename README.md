@@ -60,14 +60,44 @@ The order is as follows, from least specific to most specific:
 
 Any of the sections listed above may be omitted if not needed.
 
-## Useful variables
+## Mixins
+
+### Breakpoints
+
+There are 3 breakpoint mixins provided by aml-css:
+* `bp`, which creates a min-width media query
+* `bp-max`, which creates a max-width media query
+* `bp-min-max`, which creates a media query constrained between a min-width and
+  max-width
+
+The `bp` and `bp-max` mixins share the same function signature of: `bp($breakpoint, $media)`,
+where `$breakpoint` can be a named breakpoint, as defined in `$aml-breakpoints`,
+or alternatively a number with or without a unit.
+
+Numbers given without units
+are assumed to be pixels, and are converted to rem in the final output. `$media` is an optional parameter, defaulting to `$aml-default-media-type`.
+
+The `bp-min-max` mixin's function signature is `bp-min-max($min-bp, $max-bp, $media)`. `$media` is an optional parameter, defaulting to `$aml-default-media-type`.
+
+### Clearfix
+
+This is a basic clearfix, it can be used like so: `@include clearfix;`
+
+## Functions
+
+* `rem($pixels, $base-font-size: $aml-font-size)` Takes a unitless number
+  $pixels`, representing the desired size in pixels, and converts it to a rem
+  unit.
+
+## Global variables
 
 ### Class namespace
 
 The format will output as follows: `.{prefix}-{namespace}-ClassName`.
 
-* `$aml-namespace`: The namespace for all classes (except states). Defaults to `""`.<br>
-When set, a hypen will automatically be used as a separator.
+* `$aml-namespace`: The namespace for all classes (except states). Defaults to `""`.
+
+  When set, a hypen will automatically be used as a separator.
 
 ### Colors
 
@@ -86,6 +116,7 @@ The following type-related variables are available to change:
 * `$aml-font-family`: sets the default font family for most text. Defaults to
   `"Helvetica Neue", Helvetica, Arial, sans-serif`.
 * `$aml-font-size`: sets the default font size for most text. Defaults to `16px`.
+  Should be set in pixels.
 * `$aml-line-height`: sets the default line height for most text.
   Defaults to `1.5`.
 * `$aml-font-weight`: sets the default font weight for most text.
@@ -100,15 +131,13 @@ The following type-related variables are available to change:
 * `$aml-button-font-family`: sets the default font family for buttons.
   Defaults to `inherit`
 
-### Links
-
-
 ### Sizes and Spacing
 
 * `$aml-max-width`: The maximum width of the site, used for the `.Container` object
   along with the `huge` breakpoint by default
 * `$aml-spacing` and it's size variants. The size of `$aml-spacing` should be between
-  `$aml-spacing-small` and `$aml-spacing-large`<br>
+  `$aml-spacing-small` and `$aml-spacing-large`
+
   Defaults to:
 
   ```
@@ -124,7 +153,8 @@ The following type-related variables are available to change:
 * `$aml-default-margin` and `$aml-default-padding` set the amount of margin or
   padding to apply to certain elements by default.
 * `$aml-denominators`: Controls which denominators to generate common fraction
-  based size classes from. Defaults to: `1 2 3 4 5 6`.<br>
+  based size classes from. Defaults to: `1 2 3 4 5 6`.
+
   _**Note:**_ the fractions output will be simplified, meaning that
   `.u-2/4` will not be created because `.u-1/2` is a simpler fraction.
 * `$aml-generate-breakpoint-variants` controls whether or not breakpoint variants will be generated for size classes. For example: `.u-1/2@tiny`, where `tiny` represents the breakpoint name defined in `$aml-breakpoints`.
@@ -135,21 +165,6 @@ The following type-related variables are available to change:
 * `$aml-grid-gutter`: the horizontal spacing between grid items. Defaults to `$aml-spacing`.
 * `$aml-grid-vertical-gutter`: the vertical spacing between grid items. Defaults to `$aml-grid-gutter`.
 
-### Breakpoints
-
-There are 3 breakpoint mixins provided by aml-css:
-* `bp`, which creates a min-width media query
-* `bp-max`, which creates a max-width media query
-* `bp-min-max`, which creates a media query constrained between a min-width and
-  max-width
-
-The `bp` and `bp-max` mixins share the same function signature of: `bp($breakpoint, $media)`,
-where `$breakpoint` can be a named breakpoint, as defined in `$aml-breakpoints`,
-or alternatively a number with or without a unit. Numbers given without units
-are assumed to be pixels, and is converted to rem in the final output. `$media` is an optional parameter.
-
-The `bp-min-max` mixin's function signature is `bp-min-max($min-bp, $max-bp, $media)`, where media is an optional parameter.
-
 #### Global defaults for breakpoints
 
 * `$aml-default-media-type`: Sets the media type to use in media queries.
@@ -157,8 +172,10 @@ The `bp-min-max` mixin's function signature is `bp-min-max($min-bp, $max-bp, $me
 * `$aml-breakpoints`: The sass map which defines the various breakpoints to use with
   the `bp`, `bp-max`, and `bp-min-max` mixins, as well as for the various
   classes which can generate variants such as `.u-1/2@large`, with `large`
-  being the name of the breakpoint.<br>
+  being the name of the breakpoint.
+
   Defaults to:
+
   ```
   $breakpoints = (
     tiny: rem(480)
