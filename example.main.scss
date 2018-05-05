@@ -15,9 +15,10 @@
 // -- Tools (Functions and Mixins)
 
 @import "tools/functions/rem";
-@import "tools/functions/get-breakpoint";
-@import "tools/functions/strip-unit";
-@import "tools/functions/gcd";
+@import "tools/functions/aml-get-breakpoint";
+@import "tools/functions/aml-strip-unit";
+@import "tools/functions/aml-no-unit";
+@import "tools/functions/aml-gcd";
 @import "tools/mixins/clearfix";
 @import "tools/mixins/breakpoints";
 

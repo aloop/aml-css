@@ -1,10 +1,8 @@
-@import "../tools/functions/no-unit";
-
 html {
     font-family: $aml-font-family;
     font-size: em($aml-font-size);
     font-weight: $aml-font-weight;
-    line-height: no-unit($aml-line-height);
+    line-height: aml-no-unit($aml-line-height);
     color: $aml-text-color;
     background-color: $aml-bg-color;
     min-height: 100%;

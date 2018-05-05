@@ -1,9 +1,7 @@
-@import "../tools/functions/gcd";
-
 @mixin _aml-generate-sizes($denominators, $breakpoint: null) {
     @each $denominator in $denominators {
         @for $numerator from 1 through $denominator {
-            @if gcd($numerator, $denominator) == 1 {
+            @if aml-gcd($numerator, $denominator) == 1 {
                 // Calculate the percentage for the width
                 $size: 100% * ($numerator / $denominator);
 

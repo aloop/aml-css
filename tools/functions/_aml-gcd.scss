@@ -1,0 +1,7 @@
+@function aml-gcd($a, $b){
+    @if $b == 0 {
+        @return abs($a);
+    }
+
+    @return aml-gcd($b, $a % $b);
+}

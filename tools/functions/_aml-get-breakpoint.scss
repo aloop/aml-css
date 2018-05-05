@@ -1,4 +1,4 @@
-@function get-breakpoint($breakpoint, $breakpoints: $aml-breakpoints) {
+@function aml-get-breakpoint($breakpoint, $breakpoints: $aml-breakpoints) {
     @if type-of($breakpoint) == number {
         @if unitless($breakpoint) {
             @error "Unitless number given as breakpoint";
