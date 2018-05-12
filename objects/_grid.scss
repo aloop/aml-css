@@ -4,12 +4,31 @@
     display: flex;
     flex-wrap: wrap;
 
+    margin-bottom: $aml-grid-bottom-margin;
+
     &.has-gutter {
         margin-left: -$aml-grid-gutter;
         width: calc(100% + #{$aml-grid-gutter});
     }
 
-    // @TODO: This seems to break the layout when using sizes that equal less than 100%
+    // The way vertical gutters work with this grid is a bit odd, in that
+    // the margin of the last row will bleed out of the .o-Grid element.
+    // This makes the .o-Grid element appear to have a bottom margin, which
+    // this rule eliminates by using a negative bottom margin.
+    //
+    // If you want to have a bottom margin on an .o-Grid element and use a
+    // vertical gutter, so you should subtract `$aml-grid-vertical-gutter` from
+    // what you want the margin to be.
+    // For example, if you want a 20px margin (in rems):
+    // `margin-bottom: rem(10) - $aml-grid-vertical-gutter;`
+    &.has-vertical-gutter {
+        margin-bottom: $aml-grid-bottom-margin - $aml-grid-vertical-gutter;
+    }
+}
+
+.o-#{$aml-ns}Grid--flush {
+    margin-bottom: 0;
+
     &.has-vertical-gutter {
         margin-bottom: -$aml-grid-vertical-gutter;
     }
@@ -36,6 +55,6 @@
     }
 
     .o-#{$aml-ns}Grid.has-vertical-gutter > & {
-        padding-bottom: $aml-grid-vertical-gutter;
+        margin-bottom: $aml-grid-vertical-gutter;
     }
 }

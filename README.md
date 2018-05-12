@@ -4,6 +4,7 @@ This is a personal project, based heavily on things like ITCSS and SUITCSS. I do
 
 ## TODO
 
+* Improve grid, look into using css grid by default, making the flexbox based grid optional.
 * Write clearer explanations and provide better information about various
   aspects of this library. This should include much better comments and
   documentation in the actual scss files.
@@ -16,7 +17,7 @@ This is a personal project, based heavily on things like ITCSS and SUITCSS. I do
   naming conventions and code style.
 * Look into the possibility of regression testing to
   determine when changes affect layout or style.
-* Do proper versioning. Too in flux at the moment!
+* Proper versioning. Too unstable to bother with for now.
 
 ## Install
 
@@ -164,6 +165,7 @@ The following type-related variables are available to change:
 
 * `$aml-grid-gutter`: the horizontal spacing between grid items. Defaults to `$aml-spacing`.
 * `$aml-grid-vertical-gutter`: the vertical spacing between grid items. Defaults to `$aml-grid-gutter`.
+* `$aml-grid-bottom-margin`: the size of the bottom margin of the `.o-Grid` element. Defaults to `$aml-spacing`.
 
 #### Global defaults for breakpoints
 
