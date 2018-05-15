@@ -1,6 +1,6 @@
 html {
     font-family: $aml-font-family;
-    font-size: em($aml-font-size);
+    font-size: ($aml-font-size / 16px) + 0em;
     font-weight: $aml-font-weight;
     line-height: aml-no-unit($aml-line-height);
     color: $aml-text-color;
