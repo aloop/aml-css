@@ -1,6 +1,6 @@
 .o-#{$aml-ns}List {
     list-style: none;
-    margin-bottom: $aml-spacing;
+    margin-bottom: $aml-default-margin;
 }
 
 .o-#{$aml-ns}List--flush {
@@ -37,7 +37,7 @@
 }
 
 .o-#{$aml-ns}List--nested {
-    padding-left: $aml-spacing;
+    padding-left: $aml-list-indentation;
 }
 
 .o-#{$aml-ns}List--inline {
