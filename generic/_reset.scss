@@ -19,6 +19,12 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"] {
     -webkit-appearance: button;
+    cursor: pointer;
+}
+
+input[type="file"],
+label[for] {
+    cursor: pointer;
 }
 
 textarea {
