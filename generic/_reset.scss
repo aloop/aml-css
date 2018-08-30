@@ -10,6 +10,23 @@ main {
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    -webkit-appearance: button;
+}
+
+textarea {
+    overflow: auto;
+}
+
+textarea,
+button,
+input {
+    border-radius: 0;
 }
