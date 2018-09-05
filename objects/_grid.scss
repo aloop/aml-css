@@ -22,7 +22,7 @@
     // For example, if you want a 20px margin (in rems):
     // `margin-bottom: rem(10) - $aml-grid-vertical-gutter;`
     &.has-vertical-gutter {
-        margin-bottom: $aml-grid-bottom-margin - $aml-grid-vertical-gutter;
+        margin-bottom: calc(#{$aml-grid-bottom-margin} - #{$aml-grid-vertical-gutter});
     }
 }
 
