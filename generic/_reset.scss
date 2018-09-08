@@ -32,7 +32,11 @@ textarea {
 }
 
 textarea,
+optgroup,
 button,
+select,
 input {
+    font: inherit;
+    line-height: inherit;
     border-radius: 0;
 }
