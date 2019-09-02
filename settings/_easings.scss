@@ -32,34 +32,34 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 // Reversed Curves
 
-$easeInSineReverse: cubic-bezier(0.255, 0.285, 0.530, 1.000);
-$easeOutSineReverse: cubic-bezier(0.435, 0.000, 0.610, 0.425);
-$easeInOutSineReverse: cubic-bezier(0.450, 0.050, 0.555, 0.950);
+$easeInSineReverse: cubic-bezier(0.255, 0.285, 0.53, 1);
+$easeOutSineReverse: cubic-bezier(0.435, 0, 0.61, 0.425);
+$easeInOutSineReverse: cubic-bezier(0.45, 0.05, 0.555, 0.95);
 
-$easeInQuadReverse: cubic-bezier(0.320, 0.470, 0.450, 0.915);
-$easeOutQuadReverse: cubic-bezier(0.550, 0.060, 0.750, 0.540);
-$easeInOutQuadReverse: cubic-bezier(0.485, 0.045, 0.545, 0.970);
+$easeInQuadReverse: cubic-bezier(0.32, 0.47, 0.45, 0.915);
+$easeOutQuadReverse: cubic-bezier(0.55, 0.06, 0.75, 0.54);
+$easeInOutQuadReverse: cubic-bezier(0.485, 0.045, 0.545, 0.97);
 
-$easeInCubicReverse: cubic-bezier(0.325, 0.810, 0.450, 0.945);
-$easeOutCubicReverse: cubic-bezier(0.645, 0.000, 0.785, 0.390);
-$easeInOutCubicReverse: cubic-bezier(0.645, 0.000, 0.355, 0.955);
+$easeInCubicReverse: cubic-bezier(0.325, 0.81, 0.45, 0.945);
+$easeOutCubicReverse: cubic-bezier(0.645, 0, 0.785, 0.39);
+$easeInOutCubicReverse: cubic-bezier(0.645, 0, 0.355, 0.955);
 
-$easeInQuartReverse: cubic-bezier(0.315, 0.780, 0.105, 0.970);
-$easeOutQuartReverse: cubic-bezier(0.560, 0.000, 0.835, 0.160);
-$easeInOutQuartReverse: cubic-bezier(0.825, 0.000, 0.230, 1.000);
+$easeInQuartReverse: cubic-bezier(0.315, 0.78, 0.105, 0.97);
+$easeOutQuartReverse: cubic-bezier(0.56, 0, 0.835, 0.16);
+$easeInOutQuartReverse: cubic-bezier(0.825, 0, 0.23, 1);
 
-$easeInQuintReverse: cubic-bezier(0.145, 0.940, 0.245, 0.950);
-$easeOutQuintReverse: cubic-bezier(0.680, 0.000, 0.770, 0.000);
-$easeInOutQuintReverse: cubic-bezier(0.930, 0.000, 0.140, 1.000);
+$easeInQuintReverse: cubic-bezier(0.145, 0.94, 0.245, 0.95);
+$easeOutQuintReverse: cubic-bezier(0.68, 0, 0.77, 0);
+$easeInOutQuintReverse: cubic-bezier(0.93, 0, 0.14, 1);
 
-$easeInExpoReverse: cubic-bezier(0.205, 0.965, 0.050, 0.950);
-$easeOutExpoReverse: cubic-bezier(0.780, 0.000, 0.810, 0.000);
-$easeInOutExpoReverse: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+$easeInExpoReverse: cubic-bezier(0.205, 0.965, 0.05, 0.95);
+$easeOutExpoReverse: cubic-bezier(0.78, 0, 0.81, 0);
+$easeInOutExpoReverse: cubic-bezier(1, 0, 0, 1);
 
-$easeInCircReverse: cubic-bezier(0.020, 0.665, 0.400, 0.960);
-$easeOutCircReverse: cubic-bezier(0.835, 0.000, 0.925, 0.180);
-$easeInOutCircReverse: cubic-bezier(0.850, 0.140, 0.215, 0.865);
+$easeInCircReverse: cubic-bezier(0.02, 0.665, 0.4, 0.96);
+$easeOutCircReverse: cubic-bezier(0.835, 0, 0.925, 0.18);
+$easeInOutCircReverse: cubic-bezier(0.85, 0.14, 0.215, 0.865);
 
-$easeInBackReverse: cubic-bezier(0.265, 0.955, 0.400, 1.280);
-$easeOutBackReverse: cubic-bezier(0.680, 0.000, 0.825, 0.390);
-$easeInOutBackReverse: cubic-bezier(0.735, 0.000, 0.320, 2.100);
+$easeInBackReverse: cubic-bezier(0.265, 0.955, 0.4, 1.28);
+$easeOutBackReverse: cubic-bezier(0.68, 0, 0.825, 0.39);
+$easeInOutBackReverse: cubic-bezier(0.735, 0, 0.32, 2.1);
