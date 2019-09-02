@@ -5,7 +5,11 @@
                 // Calculate the percentage for the width
                 $size: 100% * ($numerator / $denominator);
 
-                $suffix: #{$numerator}\/#{$denominator}#{if($breakpoint, \@#{$breakpoint}, "")};
+                $suffix: #{$numerator}\/#{$denominator}#{if(
+                        $breakpoint,
+                        \@#{$breakpoint},
+                        ""
+                    )};
 
                 // Example output selectors: .u-3/4 or .u-1/2@large
                 .u-#{$aml-ns}#{$suffix} {

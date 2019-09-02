@@ -1,4 +1,5 @@
-img, svg {
+img,
+svg {
     display: inline-block;
     vertical-align: bottom;
     max-width: 100%;
@@ -6,6 +7,6 @@ img, svg {
 }
 
 // Remove border in IE
-a img{
+a img {
     border: 0px;
 }

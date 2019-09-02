@@ -1,6 +1,8 @@
 /*
     Set a default indentation for lists.
 */
-ul, ol, dl {
+ul,
+ol,
+dl {
     margin-left: $aml-list-indentation;
 }

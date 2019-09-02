@@ -37,7 +37,6 @@
 
 @each $name, $size in $aml-breakpoints {
     @include bp($name) {
-
         .o-#{$aml-ns}Box--inline\@#{$name} {
             display: inline-block;
         }

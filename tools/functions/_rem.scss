@@ -1,7 +1,7 @@
 @import "./aml-strip-unit";
 
 @function rem($pixels, $base-font-size: $aml-font-size) {
-    @if not (unitless($pixels)) {
+    @if not(unitless($pixels)) {
         @error "rem: $pixels should be a unitless number, '#{$pixels}' given.";
     }
 

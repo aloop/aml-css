@@ -3,7 +3,7 @@
 
 // Generates a media query at the given breakpoint
 @mixin bp($breakpoint, $media: $aml-default-media-type) {
-   @media #{$media} and (min-width: aml-get-breakpoint($breakpoint)) {
+    @media #{$media} and (min-width: aml-get-breakpoint($breakpoint)) {
         @content;
     }
 }

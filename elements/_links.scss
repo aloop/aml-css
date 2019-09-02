@@ -3,7 +3,8 @@ a {
     text-decoration: $aml-link-decoration;
     color: $aml-link-color;
 
-    &:hover, &:active {
+    &:hover,
+    &:active {
         text-decoration: $aml-link-decoration-hover;
         color: $aml-link-color-hover;
     }
