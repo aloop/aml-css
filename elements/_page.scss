@@ -5,11 +5,11 @@ html {
     line-height: aml-no-unit($aml-line-height);
     color: $aml-text-color;
     background-color: $aml-bg-color;
-    min-height: 100%;
     // Prevent layout jump between pages if there isn't enough content to scroll
     overflow-y: scroll;
 }
 
+html,
 body {
     min-height: 100%;
 }
