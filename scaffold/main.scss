@@ -1,34 +1,34 @@
 // YOUR SETTINGS OVERRIDES HERE
 
-@use "settings";
+@forward "settings";
 
 // -- Generic
 
-@use "../node_modules/@amloop/aml-css/src/generic/reset";
-@use "../node_modules/@amloop/aml-css/src/generic/box-sizing";
+@forward "../node_modules/@amloop/aml-css/src/generic/reset";
+@forward "../node_modules/@amloop/aml-css/src/generic/box-sizing";
 
 // YOUR GENERICS HERE
 
-@use "properties";
+@forward "properties";
 
 // -- Elements
 
-@use "../node_modules/@amloop/aml-css/src/elements/root";
-@use "../node_modules/@amloop/aml-css/src/elements/body";
-@use "../node_modules/@amloop/aml-css/src/elements/headings";
-@use "../node_modules/@amloop/aml-css/src/elements/links";
-@use "../node_modules/@amloop/aml-css/src/elements/buttons";
-@use "../node_modules/@amloop/aml-css/src/elements/lists";
-@use "../node_modules/@amloop/aml-css/src/elements/media";
-@use "../node_modules/@amloop/aml-css/src/elements/tables";
+@forward "../node_modules/@amloop/aml-css/src/elements/root";
+@forward "../node_modules/@amloop/aml-css/src/elements/body";
+@forward "../node_modules/@amloop/aml-css/src/elements/headings";
+@forward "../node_modules/@amloop/aml-css/src/elements/links";
+@forward "../node_modules/@amloop/aml-css/src/elements/buttons";
+@forward "../node_modules/@amloop/aml-css/src/elements/lists";
+@forward "../node_modules/@amloop/aml-css/src/elements/media";
+@forward "../node_modules/@amloop/aml-css/src/elements/tables";
 
 // YOUR ELEMENTS HERE
 
 // -- Objects
 
-@use "../node_modules/@amloop/aml-css/src/objects/container";
-@use "../node_modules/@amloop/aml-css/src/objects/list";
-@use "../node_modules/@amloop/aml-css/src/objects/media";
+@forward "../node_modules/@amloop/aml-css/src/objects/container";
+@forward "../node_modules/@amloop/aml-css/src/objects/list";
+@forward "../node_modules/@amloop/aml-css/src/objects/media";
 
 // YOUR OBJECTS HERE
 
@@ -38,12 +38,12 @@
 
 // -- Utilities
 
-@use "../node_modules/@amloop/aml-css/src/utilities/clearfix";
-@use "../node_modules/@amloop/aml-css/src/utilities/full-width";
-@use "../node_modules/@amloop/aml-css/src/utilities/hidden";
-@use "../node_modules/@amloop/aml-css/src/utilities/visually-hidden";
-@use "../node_modules/@amloop/aml-css/src/utilities/break-word";
-@use "../node_modules/@amloop/aml-css/src/utilities/text-align";
+@forward "../node_modules/@amloop/aml-css/src/utilities/clearfix";
+@forward "../node_modules/@amloop/aml-css/src/utilities/full-width";
+@forward "../node_modules/@amloop/aml-css/src/utilities/hidden";
+@forward "../node_modules/@amloop/aml-css/src/utilities/visually-hidden";
+@forward "../node_modules/@amloop/aml-css/src/utilities/break-word";
+@forward "../node_modules/@amloop/aml-css/src/utilities/text-align";
 
 // YOUR UTILITIES HERE
 

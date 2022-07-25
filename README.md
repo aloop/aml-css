@@ -4,6 +4,31 @@ This is a personal project, based on things like ITCSS and SUITCSS. Just for mes
 
 ## Install
 
+### NPM
+
+```sh
+npm install --save-dev @amloop/aml-css
+```
+
+#### Scaffolding
+
+```sh
+# Will output to $(pwd)/styles by default
+npm exec aml-css create
+```
+
+or
+
+```sh
+# will output to $(pwd)/src/styles
+npm exec aml-css create --output=src/styles
+```
+
+For the moment it may still be necessary to manually alter some of the `@use` paths
+to point to the proper directory
+
+### Manual
+
 Clone the repository somewhere in your project, then copy the contents of the `scaffold` directory to wherever you like, then customize import paths as needed.
 
 ## Naming Conventions
