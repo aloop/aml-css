@@ -1,11 +1,11 @@
 a {
     display: inline-block;
-    text-decoration: $aml-link-decoration;
-    color: $aml-link-color;
+    text-decoration: var(--aml-link-decoration, none);
+    color: var(--aml-link-color);
 
-    &:hover,
-    &:active {
-        text-decoration: $aml-link-decoration-hover;
-        color: $aml-link-color-hover;
+    &:where(:hover),
+    &:where(:active) {
+        text-decoration: var(--aml-link-decoration-hover, none);
+        color: var(--aml-link-color-hover, var(--aml-link-color));
     }
 }

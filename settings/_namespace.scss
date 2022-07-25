@@ -1,6 +1,0 @@
-$aml-namespace: "" !default;
-$aml-ns: "";
-
-@if $aml-namespace != "" {
-    $aml-ns: "#{$aml-namespace}-";
-}

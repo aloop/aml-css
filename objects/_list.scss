@@ -1,47 +1,19 @@
-.o-#{$aml-ns}List {
+@use "../tools/functions" as fns;
+@use "../settings";
+
+.o-#{fns.get-ns()}List {
     list-style: none;
-    margin-bottom: $aml-default-margin;
+    display: flex;
+    flex-direction: column;
 }
 
-.o-#{$aml-ns}List--flush {
-    margin: 0;
-    padding: 0;
+.o-#{fns.get-ns()}List--inline {
+    flex-direction: row;
+    // Make sure items align vertically
+    justify-content: center;
+    flex-wrap: wrap;
 
-    > li {
-        margin: 0;
-    }
-}
-
-.o-#{$aml-ns}List--vflush {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-
-    > li {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-}
-
-.o-#{$aml-ns}List--hflush {
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
-
-    > li {
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
-
-.o-#{$aml-ns}List--nested {
-    padding-left: $aml-list-indentation;
-}
-
-.o-#{$aml-ns}List--inline {
-    > li {
-        display: inline-block;
+    > :where(li) {
+        display: inline-flex;
     }
 }

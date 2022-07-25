@@ -1,0 +1,42 @@
+@use "sass:map";
+
+// Make sure to update the path if needed
+
+@use "settings";
+/*
+ * These are defined before pulling in our functions because it is used within
+ * some functions.
+ */
+/* -- Font configuration -- */
+
+// settings.$base-font-size: 16;
+
+/* -- Viewport configuration -- */
+
+// settings.$min-site-width: 320;
+// settings.$max-site-width: 1920;
+
+@use "tools";
+
+/* -- Namespacing Configuration -- */
+
+/*
+ * `settings.$namespace` will be prepended to all classes in this library when compiled.
+ */
+
+// settings.$namespace: "";
+
+/* -- Breakpoint Configuration -- */
+
+/*
+ * These settings will determine what classes will be generated and
+ * what breakpoints you can use with the `bp` mixins.
+ */
+
+// settings.$default-media-type: all;
+
+// Set a breakpoint
+// settings.$breakpoints: map.set(settings.$breakpoints, xxl, tools.rem(1600));
+
+// Remove a breakpoint
+// settings.$breakpoints: map.remove(settings.$breakpoints, xs);

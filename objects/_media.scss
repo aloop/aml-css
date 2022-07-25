@@ -1,48 +1,51 @@
 /*
-    This object implements a common pattern where an image is placed beside some content.
-    http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ *  This object implements a common pattern where an image is placed beside some content.
+ *  http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ *
+ *  This variant uses flexbox instead of floats
+ */
 
-    This variant uses flexbox instead of floats
-*/
+@use "../settings";
+@use "../tools/functions" as fns;
 
-.o-#{$aml-ns}Media {
+.o-#{fns.get-ns()}Media {
     display: flex;
     align-items: flex-start;
 }
 
-.o-#{$aml-ns}Media-body {
+.o-#{fns.get-ns()}Media-body {
     display: block;
     flex-grow: 1;
 
     &,
-    > :last-child {
+    > :where(:last-child) {
         margin-bottom: 0;
     }
 }
 
-.o-#{$aml-ns}Media-image {
-    margin-right: $aml-spacing;
+.o-#{fns.get-ns()}Media-image {
+    margin-right: var(--aml-spacing);
 
-    img {
+    :where(img) {
         display: block;
     }
 }
 
 /*
-    Vertically center the image and body
-*/
-.o-#{$aml-ns}Media--center {
+ *  Vertically center the image and body
+ */
+.o-#{fns.get-ns()}Media--center {
     align-items: center;
 }
 
 /*
-    Show the image on the right side instead of the left side.
-*/
-.o-#{$aml-ns}Media--reverse {
+ *   Show the image on the right side instead of the left side.
+ */
+.o-#{fns.get-ns()}Media--reverse {
     flex-direction: row-reverse;
 
-    > .o-#{$aml-ns}Media-image {
+    > :where(.o-#{fns.get-ns()}Media-image) {
         margin-right: 0;
-        margin-left: $aml-spacing;
+        margin-left: var(--aml-spacing);
     }
 }

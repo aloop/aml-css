@@ -1,0 +1,24 @@
+@use "sass:map";
+
+@use "../../settings";
+@use "rem" as *;
+
+@function get-breakpoint($breakpoint, $breakpoints: settings.$breakpoints) {
+    @if type-of($breakpoint) == number {
+        @if unitless($breakpoint) {
+            @error "Unitless number given as breakpoint";
+        }
+
+        @return $breakpoint;
+    } @else if map.has-key($breakpoints, $breakpoint) {
+        $breakpointVal: map.get($breakpoints, $breakpoint);
+
+        @if unitless($breakpointVal) {
+            @return rem($breakpointVal);
+        }
+
+        @return $breakpointVal;
+    }
+
+    @warn "No breakpoint found for `#{$breakpoint}`";
+}

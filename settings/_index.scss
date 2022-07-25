@@ -1,0 +1,41 @@
+@use "sass:map";
+@use "sass:math";
+
+/* -- Namespacing Configuration -- */
+
+/*
+ * `$namespace` will be prepended to all classes in this library when compiled.
+ * do not set `$ns`, that is used as an internal shorthand.
+ */
+
+$namespace: "" !default;
+
+/* -- Viewport configuration -- */
+
+$min-site-width: 320 !default;
+$max-site-width: 1000 !default;
+
+/* -- Font configuration -- */
+
+/*
+ * This should be a unitless number in pixels.
+ */
+$base-font-size: 16 !default;
+
+/* -- Breakpoint Configuration -- */
+
+/*
+ * These settings will determine what classes will be generated and
+ * what breakpoints you can use with the `bp` mixins.
+ */
+
+$default-media-type: all !default;
+
+$breakpoints: (
+    xs: 480,
+    s: 680,
+    m: 768,
+    l: 960,
+    xl: 1200,
+    max: $max-site-width,
+) !default;

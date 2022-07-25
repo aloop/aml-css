@@ -1,9 +1,12 @@
-@import "./aml-strip-unit";
+@use "sass:math";
 
-@function rem($pixels, $base-font-size: $aml-font-size) {
+@use "../../settings";
+@use "strip-unit" as *;
+
+@function rem($pixels, $base-font-size: settings.$base-font-size) {
     @if not(unitless($pixels)) {
         @error "rem: $pixels should be a unitless number, '#{$pixels}' given.";
     }
 
-    @return ($pixels / aml-strip-unit($base-font-size)) + 0rem;
+    @return math.div($pixels, strip-unit($base-font-size)) + 0rem;
 }

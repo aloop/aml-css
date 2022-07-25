@@ -1,9 +1,11 @@
-@import "../functions/aml-get-breakpoint";
-@import "../functions/rem";
+@use "sass:map";
+
+@use "../functions" as fns;
+@use "../../settings";
 
 // Generates a media query at the given breakpoint
-@mixin bp($breakpoint, $media: $aml-default-media-type) {
-    @media #{$media} and (min-width: aml-get-breakpoint($breakpoint)) {
+@mixin bp($breakpoint, $media: settings.$default-media-type) {
+    @media #{$media} and (min-width: fns.get-breakpoint($breakpoint)) {
         @content;
     }
 }
@@ -13,8 +15,8 @@
 // Removes one pixel (in rem units) from the breakpoint because otherwise
 // if a min-width media query at the same breakpoint exists they can both
 // match simultaneously.
-@mixin bp-max($breakpoint, $media: $aml-default-media-type) {
-    @media #{$media} and (max-width: aml-get-breakpoint($breakpoint) - rem(1)) {
+@mixin bp-max($breakpoint, $media: settings.$default-media-type) {
+    @media #{$media} and (max-width: #{fns.get-breakpoint($breakpoint) - fns.rem(1)}) {
         @content;
     }
 }
@@ -23,8 +25,8 @@
 //
 // Removes one pixel (in rem units) from the `$max-bp` for the same reason
 // as the bp-max mixin defined above.
-@mixin bp-min-max($min-bp, $max-bp, $media: $aml-default-media-type) {
-    @media #{$media} and (min-width: aml-get-breakpoint($min-bp)) and (max-width: aml-get-breakpoint($max-bp) - rem(1)) {
+@mixin bp-min-max($min-bp, $max-bp, $media: settings.$default-media-type) {
+    @media #{$media} and (min-width: fns.get-breakpoint($min-bp)) and (max-width: #{fns.get-breakpoint($max-bp) - fns.rem(1)}) {
         @content;
     }
 }

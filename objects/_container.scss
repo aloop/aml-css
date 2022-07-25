@@ -1,32 +1,40 @@
-.o-#{$aml-ns}Container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: $aml-spacing;
-    padding-right: $aml-spacing;
-    max-width: $aml-max-width;
+@use "../tools/functions" as fns;
+@use "../settings";
+
+.o-#{fns.get-ns()}Container {
+    display: grid;
+    grid-template-columns:
+        [full-start] 1fr [wrapper-start] minmax(0, var(--aml-max-site-width))
+        [wrapper-end] 1fr [full-end];
+    margin-inline: auto;
+    padding-inline: var(--aml-spacing);
+
+    > :where(*) {
+        grid-column: wrapper;
+    }
+
+    // Allow children to occupy the full width if needed
+    > :where(.is-full-width) {
+        grid-column: full;
+    }
 }
 
-.o-#{$aml-ns}Container--flush {
-    padding-left: 0;
-    padding-right: 0;
+.o-#{fns.get-ns()}Container--flush {
+    padding-inline: 0;
 }
 
-.o-#{$aml-ns}Container--tiny {
-    padding-left: $aml-spacing-tiny;
-    padding-right: $aml-spacing-tiny;
+.o-#{fns.get-ns()}Container--xs {
+    padding-inline: var(--aml-spacing-xs);
 }
 
-.o-#{$aml-ns}Container--small {
-    padding-left: $aml-spacing-small;
-    padding-right: $aml-spacing-small;
+.o-#{fns.get-ns()}Container--s {
+    padding-inline: var(--aml-spacing-s);
 }
 
-.o-#{$aml-ns}Container--large {
-    padding-left: $aml-spacing-large;
-    padding-right: $aml-spacing-large;
+.o-#{fns.get-ns()}Container--l {
+    padding-inline: var(--aml-spacing-l);
 }
 
-.o-#{$aml-ns}Container--huge {
-    padding-left: $aml-spacing-huge;
-    padding-right: $aml-spacing-huge;
+.o-#{fns.get-ns()}Container--xl {
+    padding-inline: var(--aml-spacing-xl);
 }

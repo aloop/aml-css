@@ -10,15 +10,15 @@ table {
 }
 
 button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
+input:where([type="button"]),
+input:where([type="submit"]),
+input:where([type="reset"]) {
     -webkit-appearance: button;
     cursor: pointer;
 }
 
-input[type="file"],
-label[for] {
+input:where([type="file"]),
+label:where([for]) {
     cursor: pointer;
 }
 

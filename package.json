@@ -1,0 +1,29 @@
+{
+    "name": "@aloop/aml-css",
+    "version": "1.0.0",
+    "description": "A simple starting point for styling a website",
+    "author": "Anthony Loop <anthony@anthonyloop.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aloop/aml-css.git"
+    },
+    "bugs": {
+        "url": "https://github.com/aloop/aml-css/issues"
+    },
+    "homepage": "https://github.com/aloop/aml-css#readme",
+    "main": "main.example.scss",
+    "scripts": {
+        "build": "sass main.test.scss:dist/main.css",
+        "watch": "sass --watch main.test.scss:dist/main.css",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "css",
+        "scss",
+        "sass"
+    ],
+    "devDependencies": {
+        "sass": "^1.54.0"
+    }
+}

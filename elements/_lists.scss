@@ -1,8 +1,8 @@
 /*
-    Set a default indentation for lists.
+    Remove styling from lists by default
 */
 ul,
 ol,
 dl {
-    margin-left: $aml-list-indentation;
+    list-style: none;
 }

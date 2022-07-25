@@ -1,22 +1,24 @@
-// For Screen Readers. From html5 boilerplate: https://html5boilerplate.com/
-.u-#{$aml-ns}visuallyHidden {
-    position: absolute #{$aml-important};
-    width: 1px #{$aml-important};
-    height: 1px #{$aml-important};
-    overflow: hidden #{$aml-important};
-    clip: rect(1px, 1px, 1px, 1px) #{$aml-important};
-    white-space: nowrap #{$aml-important};
+@use "../settings";
+@use "../tools/functions" as fns;
 
-    &.is-focusable {
-        &:active,
-        &:focus {
-            position: static #{$aml-important};
-            width: auto #{$aml-important};
-            height: auto #{$aml-important};
-            margin: 0 #{$aml-important};
-            overflow: visible #{$aml-important};
-            clip: auto #{$aml-important};
-            white-space: inherit #{$aml-important};
+.u-#{fns.get-ns()}visuallyHidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    white-space: nowrap !important;
+
+    &:where(.is-focusable) {
+        &:where(:active),
+        &:where(:focus) {
+            position: static !important;
+            width: auto !important;
+            height: auto !important;
+            margin: 0 !important;
+            overflow: visible !important;
+            clip: auto !important;
+            white-space: inherit !important;
         }
     }
 }

@@ -1,33 +1,37 @@
-.u-#{$aml-ns}hidden {
-    visibility: hidden #{$aml-important};
-    display: none #{$aml-important};
+@use "../settings";
+@use "../tools/mixins";
+@use "../tools/functions" as fns;
+
+.u-#{fns.get-ns()}hidden {
+    visibility: hidden !important;
+    display: none !important;
 }
 
-.u-#{$aml-ns}hidden\@no-js {
+.u-#{fns.get-ns()}hidden\@no-js {
     .no-js & {
-        @extend .u-#{$aml-ns}hidden;
+        @extend .u-#{fns.get-ns()}hidden;
     }
 }
 
 @media print {
-    .u-#{$aml-ns}hidden\@print {
-        visibility: hidden #{$aml-important};
-        display: none #{$aml-important};
+    .u-#{fns.get-ns()}hidden\@print {
+        visibility: hidden !important;
+        display: none !important;
     }
 }
 
-@each $name, $size in $aml-breakpoints {
-    @include bp($name) {
-        .u-#{$aml-ns}hidden\@#{$name} {
-            visibility: hidden #{$aml-important};
-            display: none #{$aml-important};
+@each $name, $size in settings.$breakpoints {
+    @include mixins.bp($name) {
+        .u-#{fns.get-ns()}hidden\@bp-#{$name} {
+            visibility: hidden !important;
+            display: none !important;
         }
     }
 
-    @include bp-max($name) {
-        .u-#{$aml-ns}hidden\@max-#{$name} {
-            visibility: hidden #{$aml-important};
-            display: none #{$aml-important};
+    @include mixins.bp-max($name) {
+        .u-#{fns.get-ns()}hidden\@bp-max-#{$name} {
+            visibility: hidden !important;
+            display: none !important;
         }
     }
 }

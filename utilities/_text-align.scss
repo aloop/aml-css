@@ -1,11 +1,14 @@
-.u-#{$aml-ns}textLeft {
-    text-align: left #{$aml-important};
+@use "../settings";
+@use "../tools/functions" as fns;
+
+.u-#{fns.get-ns()}textLeft {
+    text-align: left !important;
 }
 
-.u-#{$aml-ns}textCenter {
-    text-align: center #{$aml-important};
+.u-#{fns.get-ns()}textCenter {
+    text-align: center !important;
 }
 
-.u-#{$aml-ns}textRight {
-    text-align: right #{$aml-important};
+.u-#{fns.get-ns()}textRight {
+    text-align: right !important;
 }
