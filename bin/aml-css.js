@@ -2,12 +2,16 @@
 
 // Imports
 
-const fs = require("node:fs");
-const path = require("node:path");
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 // Paths
 
-const scaffoldPath = path.resolve(__dirname, "../scaffold");
+const _filename = fileURLToPath(import.meta.url);
+const _dirname = path.dirname(_filename);
+
+const scaffoldPath = path.resolve(_dirname, "../scaffold");
 const workingPath = process.cwd();
 let outputPath = path.resolve(workingPath, "styles");
 
@@ -25,7 +29,7 @@ function error(...messages) {
 function help(err = false) {
     const text = `Usage:
 
-    ${path.basename(__filename)} <command> [OPTION...]
+    ${path.basename(_filename)} <command> [OPTION...]
 
   Commands:
 

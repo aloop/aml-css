@@ -1,6 +1,6 @@
 {
     "name": "@amloop/aml-css",
-    "version": "1.0.2",
+    "version": "2.0.0",
     "description": "A simple starting point for styling a website",
     "author": "Anthony Loop <anthony@anthonyloop.com>",
     "license": "MIT",
@@ -13,13 +13,14 @@
     },
     "homepage": "https://github.com/aloop/aml-css#readme",
     "main": "bin/aml-css",
+    "type": "module",
     "scripts": {
         "build": "sass main.test.scss:dist/main.css",
         "watch": "sass --watch main.test.scss:dist/main.css",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "bin": {
-        "aml-css": "./bin/aml-css"
+        "aml-css": "./bin/aml-css.js"
     },
     "keywords": [
         "css",
