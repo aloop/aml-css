@@ -4,7 +4,7 @@ This is a personal project, based on things like ITCSS and SUITCSS. Just for mes
 
 ## Install
 
-Clone the repository somewhere in your project, then copy `main.example.scss`, `settings.example.scss`, and `properties.example.scss` to wherever you need them and customize as needed.
+Clone the repository somewhere in your project, then copy the contents of the `scaffold` directory to wherever you like, then customize import paths as needed.
 
 ## Naming Conventions
 

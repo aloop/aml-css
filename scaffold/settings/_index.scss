@@ -2,7 +2,7 @@
 
 // Make sure to update the path if needed
 
-@use "settings";
+@use "../../node_modules/@amloop/aml-css/src/settings";
 /*
  * These are defined before pulling in our functions because it is used within
  * some functions.

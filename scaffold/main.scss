@@ -1,0 +1,52 @@
+// YOUR SETTINGS OVERRIDES HERE
+
+@use "settings";
+
+// -- Generic
+
+@use "../node_modules/@amloop/aml-css/src/generic/reset";
+@use "../node_modules/@amloop/aml-css/src/generic/box-sizing";
+
+// YOUR GENERICS HERE
+
+@use "properties";
+
+// -- Elements
+
+@use "../node_modules/@amloop/aml-css/src/elements/root";
+@use "../node_modules/@amloop/aml-css/src/elements/body";
+@use "../node_modules/@amloop/aml-css/src/elements/headings";
+@use "../node_modules/@amloop/aml-css/src/elements/links";
+@use "../node_modules/@amloop/aml-css/src/elements/buttons";
+@use "../node_modules/@amloop/aml-css/src/elements/lists";
+@use "../node_modules/@amloop/aml-css/src/elements/media";
+@use "../node_modules/@amloop/aml-css/src/elements/tables";
+
+// YOUR ELEMENTS HERE
+
+// -- Objects
+
+@use "../node_modules/@amloop/aml-css/src/objects/container";
+@use "../node_modules/@amloop/aml-css/src/objects/list";
+@use "../node_modules/@amloop/aml-css/src/objects/media";
+
+// YOUR OBJECTS HERE
+
+// -- Components
+
+// YOUR COMPONENTS HERE
+
+// -- Utilities
+
+@use "../node_modules/@amloop/aml-css/src/utilities/clearfix";
+@use "../node_modules/@amloop/aml-css/src/utilities/full-width";
+@use "../node_modules/@amloop/aml-css/src/utilities/hidden";
+@use "../node_modules/@amloop/aml-css/src/utilities/visually-hidden";
+@use "../node_modules/@amloop/aml-css/src/utilities/break-word";
+@use "../node_modules/@amloop/aml-css/src/utilities/text-align";
+
+// YOUR UTILITIES HERE
+
+// -- Vendor
+
+// -- Overrides
