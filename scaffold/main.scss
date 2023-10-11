@@ -4,8 +4,8 @@
 
 // -- Generic
 
-@forward "../node_modules/@amloop/aml-css/src/generic/reset";
-@forward "../node_modules/@amloop/aml-css/src/generic/box-sizing";
+@forward "@amloop/aml-css/src/generic/reset";
+@forward "@amloop/aml-css/src/generic/box-sizing";
 
 // YOUR GENERICS HERE
 
@@ -13,22 +13,22 @@
 
 // -- Elements
 
-@forward "../node_modules/@amloop/aml-css/src/elements/root";
-@forward "../node_modules/@amloop/aml-css/src/elements/body";
-@forward "../node_modules/@amloop/aml-css/src/elements/headings";
-@forward "../node_modules/@amloop/aml-css/src/elements/links";
-@forward "../node_modules/@amloop/aml-css/src/elements/buttons";
-@forward "../node_modules/@amloop/aml-css/src/elements/lists";
-@forward "../node_modules/@amloop/aml-css/src/elements/media";
-@forward "../node_modules/@amloop/aml-css/src/elements/tables";
+@forward "@amloop/aml-css/src/elements/root";
+@forward "@amloop/aml-css/src/elements/body";
+@forward "@amloop/aml-css/src/elements/headings";
+@forward "@amloop/aml-css/src/elements/links";
+@forward "@amloop/aml-css/src/elements/form-fields";
+@forward "@amloop/aml-css/src/elements/lists";
+@forward "@amloop/aml-css/src/elements/media";
+@forward "@amloop/aml-css/src/elements/tables";
 
 // YOUR ELEMENTS HERE
 
 // -- Objects
 
-@forward "../node_modules/@amloop/aml-css/src/objects/container";
-@forward "../node_modules/@amloop/aml-css/src/objects/list";
-@forward "../node_modules/@amloop/aml-css/src/objects/media";
+@forward "@amloop/aml-css/src/objects/container";
+@forward "@amloop/aml-css/src/objects/list";
+@forward "@amloop/aml-css/src/objects/media";
 
 // YOUR OBJECTS HERE
 
@@ -38,12 +38,11 @@
 
 // -- Utilities
 
-@forward "../node_modules/@amloop/aml-css/src/utilities/clearfix";
-@forward "../node_modules/@amloop/aml-css/src/utilities/full-width";
-@forward "../node_modules/@amloop/aml-css/src/utilities/hidden";
-@forward "../node_modules/@amloop/aml-css/src/utilities/visually-hidden";
-@forward "../node_modules/@amloop/aml-css/src/utilities/break-word";
-@forward "../node_modules/@amloop/aml-css/src/utilities/text-align";
+@forward "@amloop/aml-css/src/utilities/clearfix";
+@forward "@amloop/aml-css/src/utilities/hidden";
+@forward "@amloop/aml-css/src/utilities/visually-hidden";
+@forward "@amloop/aml-css/src/utilities/break-word";
+@forward "@amloop/aml-css/src/utilities/text-align";
 
 // YOUR UTILITIES HERE
 

@@ -2,7 +2,7 @@
 
 // Make sure to update the path if needed
 
-@use "../../node_modules/@amloop/aml-css/src/settings";
+@use "@amloop/aml-css/src/settings";
 /*
  * These are defined before pulling in our functions because it is used within
  * some functions.
@@ -16,7 +16,7 @@
 // settings.$min-site-width: 320;
 // settings.$max-site-width: 1920;
 
-@use "../../node_modules/@amloop/aml-css/src/tools";
+@use "@amloop/aml-css/src/tools";
 
 /* -- Namespacing Configuration -- */
 
