@@ -31,6 +31,10 @@ to point to the proper directory
 
 Clone the repository somewhere in your project, then copy the contents of the `scaffold` directory to wherever you like, then customize import paths as needed.
 
+## Recommended tooling
+
+- [PurgeCSS](https://purgecss.com/) - Remove unused classes or class variants
+
 ## Naming Conventions
 
 This mostly follows the [SUITCSS naming conventions](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md):
