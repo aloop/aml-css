@@ -2,5 +2,5 @@ button,
 input:where([type="button"]),
 input:where([type="submit"]),
 input:where([type="reset"]) {
-    font-family: var(--aml-button-font-family, inherit);
+  font-family: var(--aml-button-font-family, inherit);
 }

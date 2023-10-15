@@ -3,5 +3,5 @@
 @use "rem" as *;
 
 @function em($pixels, $base-font-size: settings.$base-font-size) {
-    @return strip-unit(rem($pixels, $base-font-size)) + 0em;
+  @return strip-unit(rem($pixels, $base-font-size)) + 0em;
 }

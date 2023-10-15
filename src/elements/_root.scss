@@ -1,12 +1,12 @@
 html {
-    min-height: 100%;
-    min-width: var(--aml-min-site-width);
-    font-family: var(--aml-font-family);
-    font-size: calc(var(--aml-font-size) / 16px + 0em);
-    font-weight: var(--aml-font-weight);
-    line-height: var(--aml-line-height);
-    color: var(--aml-text-color, #000);
-    background-color: var(--aml-bg-color, #fff);
-    // Prevent layout jump between pages if there isn't enough content to scroll
-    overflow-y: scroll;
+  min-height: 100%;
+  min-width: var(--aml-min-site-width);
+  font-family: var(--aml-font-family);
+  font-size: calc(var(--aml-font-size) / 16px + 0em);
+  font-weight: var(--aml-font-weight);
+  line-height: var(--aml-line-height);
+  color: var(--aml-text-color, #000);
+  background-color: var(--aml-bg-color, #fff);
+  // Prevent layout jump between pages if there isn't enough content to scroll
+  overflow-y: scroll;
 }

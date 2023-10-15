@@ -9,43 +9,43 @@
 @use "../tools/functions" as fns;
 
 .o-#{fns.get-ns()}Media {
-    display: flex;
-    align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
 }
 
 .o-#{fns.get-ns()}Media-body {
-    display: block;
-    flex-grow: 1;
+  display: block;
+  flex-grow: 1;
 
-    &,
-    > :where(:last-child) {
-        margin-bottom: 0;
-    }
+  &,
+  > :where(:last-child) {
+    margin-bottom: 0;
+  }
 }
 
 .o-#{fns.get-ns()}Media-image {
-    margin-right: var(--aml-spacing);
+  margin-right: var(--aml-spacing);
 
-    :where(img) {
-        display: block;
-    }
+  :where(img) {
+    display: block;
+  }
 }
 
 /*
  *  Vertically center the image and body
  */
 .o-#{fns.get-ns()}Media--center {
-    align-items: center;
+  align-items: center;
 }
 
 /*
  *   Show the image on the right side instead of the left side.
  */
 .o-#{fns.get-ns()}Media--reverse {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 
-    > :where(.o-#{fns.get-ns()}Media-image) {
-        margin-right: 0;
-        margin-left: var(--aml-spacing);
-    }
+  > :where(.o-#{fns.get-ns()}Media-image) {
+    margin-right: 0;
+    margin-left: var(--aml-spacing);
+  }
 }

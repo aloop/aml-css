@@ -3,15 +3,15 @@
 @use "../functions" as fns;
 
 @mixin bp-variants {
-    // Output breakpoint-less variant
-    @content;
+  // Output breakpoint-less variant
+  @content;
 
-    // Output breakpoint variants
-    @each $name, $size in settings.$breakpoints {
-        @include mixins.bp($name) {
-            &\@#{$name} {
-                @content;
-            }
-        }
+  // Output breakpoint variants
+  @each $name, $size in settings.$breakpoints {
+    @include mixins.bp($name) {
+      &\@#{$name} {
+        @content;
+      }
     }
+  }
 }

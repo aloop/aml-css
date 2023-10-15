@@ -1,9 +1,9 @@
 @use "sass:math";
 
 @function gcd($a, $b) {
-    @if $b == 0 {
-        @return math.abs($a);
-    }
+  @if $b == 0 {
+    @return math.abs($a);
+  }
 
-    @return gcd($b, $a % $b);
+  @return gcd($b, $a % $b);
 }

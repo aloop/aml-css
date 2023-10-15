@@ -32,10 +32,10 @@ $base-font-size: 16 !default;
 $default-media-type: all !default;
 
 $breakpoints: (
-    xs: 480,
-    sm: 680,
-    md: 768,
-    lg: 960,
-    xl: 1200,
-    max: $max-site-width,
+  xs: 480,
+  sm: 680,
+  md: 768,
+  lg: 960,
+  xl: 1200,
+  max: $max-site-width,
 ) !default;
