@@ -32,15 +32,21 @@
     }
 }
 
-.o-#{fns.get-ns()}Container--s {
+.o-#{fns.get-ns()}Container--sm {
     @include mixins.bp-variants {
-        padding-inline: var(--aml-spacing-s);
+        padding-inline: var(--aml-spacing-sm);
     }
 }
 
-.o-#{fns.get-ns()}Container--l {
+.o-#{fns.get-ns()}Container--md {
     @include mixins.bp-variants {
-        padding-inline: var(--aml-spacing-l);
+        padding-inline: var(--aml-spacing-md);
+    }
+}
+
+.o-#{fns.get-ns()}Container--lg {
+    @include mixins.bp-variants {
+        padding-inline: var(--aml-spacing-lg);
     }
 }
 

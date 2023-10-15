@@ -37,8 +37,9 @@
 
     --aml-spacing: #{fns.rem(20)};
     --aml-spacing-xs: calc(var(--aml-spacing) / 4);
-    --aml-spacing-s: calc(var(--aml-spacing) / 2);
-    --aml-spacing-l: calc(var(--aml-spacing) * 2);
+    --aml-spacing-sm: calc(var(--aml-spacing) / 2);
+    --aml-spacing-md: var(--aml-spacing);
+    --aml-spacing-lg: calc(var(--aml-spacing) * 2);
     --aml-spacing-xl: calc(var(--aml-spacing) * 4);
 
     // -- Default margin and padding

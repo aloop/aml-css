@@ -163,15 +163,16 @@ The following type-related variables are available to change:
 - `--aml-min-site-width`: The minimum width of the site. Defaults to `settings.$min-site-width`
 - `--aml-max-site-width`: The maximum width of the site, used for the `.Container` object, along with the `max` breakpoint. Defaults to `settings.$max-site-width`
 - `--aml-spacing` and it's size variants. The size of `--aml-spacing` should be between
-  `--aml-spacing-small` and `--aml-spacing-large`
+  `--aml-spacing-sm` and `--aml-spacing-lg`
 
   Defaults to:
 
   ```scss
   --aml-spacing: rem(20);
   --aml-spacing-xs: calc(var(--aml-spacing) / 4);
-  --aml-spacing-s: calc(var(--aml-spacing) / 2);
-  --aml-spacing-l: calc(var(--aml-spacing) * 2);
+  --aml-spacing-sm: calc(var(--aml-spacing) / 2);
+  --aml-spacing-md: var(--aml-spacing);
+  --aml-spacing-lg: calc(var(--aml-spacing) * 2);
   --aml-spacing-xl: calc(var(--aml-spacing) * 4);
   ```
 
