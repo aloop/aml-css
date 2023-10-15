@@ -33,9 +33,9 @@ $default-media-type: all !default;
 
 $breakpoints: (
     xs: 480,
-    s: 680,
-    m: 768,
-    l: 960,
+    sm: 680,
+    md: 768,
+    lg: 960,
     xl: 1200,
     max: $max-site-width,
 ) !default;

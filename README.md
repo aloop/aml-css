@@ -186,17 +186,17 @@ The following type-related variables are available to change:
   Defaults to `all`
 - `$breakpoints`: The sass map which defines the various breakpoints to use with
   the `bp`, `bp-max`, and `bp-min-max` mixins, as well as for the various
-  classes which can generate variants such as `.u-hidden@bp-l` or `.u-hidden@bp-max-l`, with `l`
+  classes which can generate variants such as `.u-hidden@lg`, with `lg`
   being the name of the breakpoint.
 
-  Defaults to:
+  Defaults breakpoints are:
 
   ```scss
   $breakpoints = (
     xs: rem(480),
-    s: rem(680),
-    m: rem(768),
-    l: rem(960),
+    sm: rem(680),
+    md: rem(768),
+    lg: rem(960),
     xl: rem(1200),
     max: rem(settings.$max-site-width),
   );
