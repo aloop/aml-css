@@ -4,8 +4,10 @@
 
 // -- Generic
 
+/* purgecss start ignore */
 @forward "@amloop/aml-css/src/generic/reset";
 @forward "@amloop/aml-css/src/generic/box-sizing";
+/* purgecss end ignore */
 
 // YOUR GENERICS HERE
 
@@ -13,6 +15,7 @@
 
 // -- Elements
 
+/* purgecss start ignore */
 @forward "@amloop/aml-css/src/elements/root";
 @forward "@amloop/aml-css/src/elements/body";
 @forward "@amloop/aml-css/src/elements/headings";
@@ -21,6 +24,7 @@
 @forward "@amloop/aml-css/src/elements/lists";
 @forward "@amloop/aml-css/src/elements/media";
 @forward "@amloop/aml-css/src/elements/tables";
+/* purgecss end ignore */
 
 // YOUR ELEMENTS HERE
 
