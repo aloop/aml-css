@@ -1,4 +1,5 @@
 @use "../tools/functions" as fns;
+@use "../tools/mixins";
 @use "../settings";
 
 .o-#{fns.get-ns()}Container {
@@ -20,21 +21,31 @@
 }
 
 .o-#{fns.get-ns()}Container--flush {
-    padding-inline: 0;
+    @include mixins.bp-variants {
+        padding-inline: 0;
+    }
 }
 
 .o-#{fns.get-ns()}Container--xs {
-    padding-inline: var(--aml-spacing-xs);
+    @include mixins.bp-variants {
+        padding-inline: var(--aml-spacing-xs);
+    }
 }
 
 .o-#{fns.get-ns()}Container--s {
-    padding-inline: var(--aml-spacing-s);
+    @include mixins.bp-variants {
+        padding-inline: var(--aml-spacing-s);
+    }
 }
 
 .o-#{fns.get-ns()}Container--l {
-    padding-inline: var(--aml-spacing-l);
+    @include mixins.bp-variants {
+        padding-inline: var(--aml-spacing-l);
+    }
 }
 
 .o-#{fns.get-ns()}Container--xl {
-    padding-inline: var(--aml-spacing-xl);
+    @include mixins.bp-variants {
+        padding-inline: var(--aml-spacing-xl);
+    }
 }

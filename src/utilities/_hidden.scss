@@ -3,8 +3,10 @@
 @use "../tools/functions" as fns;
 
 .u-#{fns.get-ns()}hidden {
-    visibility: hidden !important;
-    display: none !important;
+    @include mixins.bp-variants {
+        visibility: hidden !important;
+        display: none !important;
+    }
 }
 
 .u-#{fns.get-ns()}hidden\@no-js {
@@ -17,21 +19,5 @@
     .u-#{fns.get-ns()}hidden\@print {
         visibility: hidden !important;
         display: none !important;
-    }
-}
-
-@each $name, $size in settings.$breakpoints {
-    @include mixins.bp($name) {
-        .u-#{fns.get-ns()}hidden\@bp-#{$name} {
-            visibility: hidden !important;
-            display: none !important;
-        }
-    }
-
-    @include mixins.bp-max($name) {
-        .u-#{fns.get-ns()}hidden\@bp-max-#{$name} {
-            visibility: hidden !important;
-            display: none !important;
-        }
     }
 }
