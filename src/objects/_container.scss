@@ -7,11 +7,11 @@
 
   display: grid;
   grid-template-columns:
-    [full-start] var(--_container-gap) [wrapper-start] minmax(
+    [full-start] minmax(var(--_container-gap), 1fr) [wrapper-start] minmax(
       0,
       var(--aml-max-site-width)
     )
-    [wrapper-end] var(--_container-gap) [full-end];
+    [wrapper-end] minmax(var(--_container-gap), 1fr) [full-end];
 
   > :where(*) {
     grid-column: wrapper;
