@@ -108,14 +108,16 @@ The `bp-min-max` mixin's function signature is `bp-min-max($min-bp, $max-bp, $me
   Identical to `rem` above, but outputs an number with an em unit instead.
 
 - ```scss
-  responsive-font-size(
-    $min-font-size,
-    $max-font-size,
-    $min-site-width: settings.$min-site-width,
-    $max-site-width: settings.$max-site-width,
-    $base-font-size: settings.$base-font-size
+  fluid-size(
+    $min-size,
+    $max-size,
+    $min-container-width: settings.$min-site-width,
+    $max-container-width: settings.$max-site-width,
+    $unit: vw
   )
   ```
+
+  All numbers given to `fluid-size` are expected to be in pixels, with or without the px unit.
 
 ## SCSS Variables & CSS Custom Properties
 

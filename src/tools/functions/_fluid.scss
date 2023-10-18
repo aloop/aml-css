@@ -1,0 +1,31 @@
+@use "sass:math";
+
+@use "../../settings";
+@use "strip-unit" as *;
+@use "rem" as *;
+
+@function fluid(
+  $min-size,
+  $max-size,
+  $min-container-width: settings.$min-site-width,
+  $max-container-width: settings.$max-site-width,
+  $unit: "vw"
+) {
+  $min-size: strip-unit($min-size);
+  $max-size: strip-unit($max-size);
+  $min-container-width: strip-unit($min-container-width);
+  $max-container-width: strip-unit($max-container-width);
+
+  $slope: math.div(
+    $max-size - $min-size,
+    $max-container-width - $min-container-width
+  );
+
+  $intersect: $min-size - $slope * $min-container-width;
+
+  @return clamp(
+    #{rem($min-size)},
+    #{$slope * 100}#{$unit} + #{rem($intersect)},
+    #{rem($max-size)}
+  );
+}
