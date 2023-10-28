@@ -1,4 +1,6 @@
-@use "@amloop/aml-css/src/settings";
+@use "sass:math";
+
+@use "./settings";
 @use "@amloop/aml-css/src/tools/functions" as fns;
 
 :root {
@@ -11,7 +13,7 @@
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --aml-font-mono: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier,
     monospace;
-  --aml-font-size: #{settings.$base-font-size}px;
+  --aml-font-scale: #{math.div(settings.$base-font-size, 16)};
   --aml-line-height: 1.5;
   --aml-font-weight: 400;
 

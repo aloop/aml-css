@@ -1,7 +1,7 @@
 html {
   min-width: var(--aml-min-site-width);
   font-family: var(--aml-font-family);
-  font-size: calc(var(--aml-font-size) / 16px + 0em);
+  font-size: calc(var(--aml-font-scale) * 1em);
   font-weight: var(--aml-font-weight);
   line-height: var(--aml-line-height);
   color: var(--aml-text-color, #000);

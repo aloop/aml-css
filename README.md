@@ -144,8 +144,9 @@ The following type-related variables are available to change:
 
 - `--aml-font-family`: sets the default font family for most text. Defaults to
   `"Helvetica Neue", Helvetica, Arial, sans-serif`.
-- `--aml-font-size`: sets the default font size for most text. Defaults to `16px`.
-  Should be set in pixels.
+- `--aml-font-scale`: Used to calculate the base font size set on the `html` element.
+  A value of `1` is equivalent to 16px. By default the scale is calculated as
+  `settings.$base-font-size / 16`.
 - `--aml-line-height`: sets the default line height for most text.
   Defaults to `1.5`.
 - `--aml-font-weight`: sets the default font weight for most text.
