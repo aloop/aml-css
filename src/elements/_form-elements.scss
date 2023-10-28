@@ -1,0 +1,11 @@
+@use "../tools/functions" as fns;
+
+input,
+button,
+label {
+  line-height: 1.1;
+}
+
+textarea:where(:not([rows])) {
+  min-height: fns.rem(160);
+}
