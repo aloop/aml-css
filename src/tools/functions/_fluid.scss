@@ -2,6 +2,7 @@
 
 @use "../../settings";
 @use "strip-unit" as *;
+@use "to-px" as *;
 @use "rem" as *;
 
 @function fluid(
@@ -9,10 +10,11 @@
   $max-size,
   $min-container-width: settings.$min-site-width,
   $max-container-width: settings.$max-site-width,
-  $unit: "vw"
+  $base-font-size: settings.$base-font-size,
+  $scale-unit: "vw"
 ) {
-  $min-size: strip-unit($min-size);
-  $max-size: strip-unit($max-size);
+  $min-size: strip-unit(to-px($min-size, $base-font-size));
+  $max-size: strip-unit(to-px($max-size, $base-font-size));
   $min-container-width: strip-unit($min-container-width);
   $max-container-width: strip-unit($max-container-width);
 
@@ -25,7 +27,7 @@
 
   @return clamp(
     #{rem($min-size)},
-    #{$slope * 100}#{$unit} + #{rem($intersect)},
+    #{$slope * 100}#{$scale-unit} + #{rem($intersect)},
     #{rem($max-size)}
   );
 }

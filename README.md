@@ -266,5 +266,6 @@ img.get("1:1");
 - Implement more objects
 - Look into setting up a linter to catch errors, and enforce some of the
   naming conventions and code style.
+- Unit tests
 - Look into the possibility of regression testing to
   determine when changes affect layout or style.
