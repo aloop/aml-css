@@ -1,4 +1,5 @@
 img,
+picture,
 svg,
 video,
 canvas,
@@ -9,7 +10,8 @@ object {
   display: block;
 }
 
-img {
+img,
+picture {
   max-width: 100%;
 }
 
