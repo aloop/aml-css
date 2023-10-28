@@ -47,11 +47,11 @@ textarea {
   overflow: auto;
 }
 
+input,
+button,
 textarea,
 optgroup,
-button,
-select,
-input {
+select {
   font: inherit;
   line-height: inherit;
   font-size: max(16px, 1em);
