@@ -14,7 +14,7 @@
     $breakpointVal: map.get($breakpoints, $breakpoint);
 
     @if unitless($breakpointVal) {
-      @return rem($breakpointVal);
+      @return rem($breakpointVal, 16);
     }
 
     @return $breakpointVal;

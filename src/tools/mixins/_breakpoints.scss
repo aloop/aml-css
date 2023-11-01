@@ -16,7 +16,7 @@
 // if a min-width media query at the same breakpoint exists they can both
 // match simultaneously.
 @mixin bp-max($breakpoint, $media: settings.$default-media-type) {
-  @media #{$media} and (max-width: #{fns.get-breakpoint($breakpoint) - fns.rem(1)}) {
+  @media #{$media} and (max-width: #{fns.get-breakpoint($breakpoint) - fns.rem(1, 16)}) {
     @content;
   }
 }
@@ -26,7 +26,7 @@
 // Removes one pixel (in rem units) from the `$max-bp` for the same reason
 // as the bp-max mixin defined above.
 @mixin bp-min-max($min-bp, $max-bp, $media: settings.$default-media-type) {
-  @media #{$media} and (min-width: fns.get-breakpoint($min-bp)) and (max-width: #{fns.get-breakpoint($max-bp) - fns.rem(1)}) {
+  @media #{$media} and (min-width: fns.get-breakpoint($min-bp)) and (max-width: #{fns.get-breakpoint($max-bp) - fns.rem(1, 16)}) {
     @content;
   }
 }
