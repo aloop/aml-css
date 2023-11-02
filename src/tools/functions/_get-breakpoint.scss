@@ -5,10 +5,13 @@
 
 @function get-breakpoint($breakpoint, $breakpoints: settings.$breakpoints) {
   @if type-of($breakpoint) == number {
+    // If we're given a unitless number, assume it is the desired size
+    // in pixels, and convert it to rem
     @if unitless($breakpoint) {
-      @error "Unitless number given as breakpoint";
+      @return rem($breakpoint, 16);
     }
 
+    // Otherwise return unchanged with the unit given
     @return $breakpoint;
   } @else if map.has-key($breakpoints, $breakpoint) {
     $breakpointVal: map.get($breakpoints, $breakpoint);
