@@ -1,0 +1,9 @@
+@use "sass:string";
+@use "../functions" as fns;
+@use "../variables";
+
+:root {
+  @each $size, $data in variables.$placeholders {
+    --#{fns.get-ns()}placeholder-#{$size}: "#{string.unquote($data)}";
+  }
+}

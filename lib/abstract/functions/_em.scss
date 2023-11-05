@@ -1,0 +1,7 @@
+@use "../variables";
+@use "strip-unit" as *;
+@use "rem" as *;
+
+@function em($pixels, $base-font-size: variables.$base-font-size) {
+  @return strip-unit(rem($pixels, $base-font-size)) + 0em;
+}

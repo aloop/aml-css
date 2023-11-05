@@ -1,0 +1,21 @@
+@use "../abstract/functions" as fns;
+@use "../abstract/mixins";
+
+.o-#{fns.get-ns()}List {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.o-#{fns.get-ns()}List--inline {
+  @include mixins.bp-variants {
+    flex-direction: row;
+    // Make sure items align vertically
+    justify-content: center;
+    flex-wrap: wrap;
+
+    > :where(li) {
+      display: inline-flex;
+    }
+  }
+}

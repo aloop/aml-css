@@ -1,0 +1,40 @@
+@use "../abstract/variables";
+@use "../abstract/functions" as fns;
+@use "../abstract/mixins";
+
+.o-#{fns.get-ns()}Container {
+  --_container-gap: var(--aml-size-md);
+
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(var(--_container-gap), 1fr) [wrapper-start] minmax(
+      0,
+      var(--aml-max-site-width)
+    )
+    [wrapper-end] minmax(var(--_container-gap), 1fr) [full-end];
+
+  > :where(*) {
+    grid-column: wrapper;
+  }
+
+  // Allow children to occupy the full width if needed
+  > :where(.is-full-width) {
+    grid-column: full;
+  }
+}
+
+.o-#{fns.get-ns()}Container--flush {
+  @include mixins.bp-variants {
+    --_container-gap: 0;
+  }
+}
+
+@each $size, $value in variables.$sizes {
+  @if $size != "default" {
+    .o-#{fns.get-ns()}Container--#{$size} {
+      @include mixins.bp-variants {
+        --_container-gap: var(--aml-size-#{$size});
+      }
+    }
+  }
+}

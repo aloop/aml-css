@@ -1,0 +1,13 @@
+@use "../abstract/functions" as fns;
+
+.u-#{fns.get-ns()}textLeft {
+  text-align: left !important;
+}
+
+.u-#{fns.get-ns()}textCenter {
+  text-align: center !important;
+}
+
+.u-#{fns.get-ns()}textRight {
+  text-align: right !important;
+}

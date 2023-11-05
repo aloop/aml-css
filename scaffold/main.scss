@@ -1,56 +1,31 @@
-// YOUR SETTINGS OVERRIDES HERE
+// 1 -- SASS variables/mixins/functions
 
-@forward "settings";
+@forward "abstract/variables";
 
-// -- Generic
+// 2 -- CSS Properties
 
-/* purgecss start ignore */
-@forward "@amloop/aml-css/src/generic/reset";
-@forward "@amloop/aml-css/src/generic/box-sizing";
-/* purgecss end ignore */
+@forward "abstract/properties";
 
-// YOUR GENERICS HERE
-
-@forward "properties";
-
-// -- Elements
+// 3 -- Base Definitions (resets, default element styles, etc.)
 
 /* purgecss start ignore */
-@forward "@amloop/aml-css/src/elements/root";
-@forward "@amloop/aml-css/src/elements/body";
-@forward "@amloop/aml-css/src/elements/headings";
-@forward "@amloop/aml-css/src/elements/links";
-@forward "@amloop/aml-css/src/elements/buttons";
-@forward "@amloop/aml-css/src/elements/form-elements";
-@forward "@amloop/aml-css/src/elements/lists";
-@forward "@amloop/aml-css/src/elements/media";
-@forward "@amloop/aml-css/src/elements/tables";
+@forward "@amloop/aml-css/lib/base";
 /* purgecss end ignore */
 
-// YOUR ELEMENTS HERE
+// 4 -- Layout Definitions
 
-// -- Objects
+// 5 -- Page Definitions
 
-@forward "@amloop/aml-css/src/objects/container";
-@forward "@amloop/aml-css/src/objects/list";
-@forward "@amloop/aml-css/src/objects/media";
+// 6 -- Objects
 
-// YOUR OBJECTS HERE
+@forward "@amloop/aml-css/lib/objects";
 
-// -- Components
+// 7 -- Components
 
-// YOUR COMPONENTS HERE
+// 8 -- Utilities
 
-// -- Utilities
+@forward "@amloop/aml-css/lib/utilities";
 
-@forward "@amloop/aml-css/src/utilities/clearfix";
-@forward "@amloop/aml-css/src/utilities/hidden";
-@forward "@amloop/aml-css/src/utilities/visually-hidden";
-@forward "@amloop/aml-css/src/utilities/break-word";
-@forward "@amloop/aml-css/src/utilities/text-align";
+// 9 -- Vendor
 
-// YOUR UTILITIES HERE
-
-// -- Vendor
-
-// -- Overrides
+// 10 -- Overrides

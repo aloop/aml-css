@@ -1,0 +1,12 @@
+@use "../variables";
+@use "../functions" as fns;
+
+:root {
+  @each $size, $value in variables.$sizes {
+    @if $size == "default" {
+      --aml-size: #{fns.rem($value)};
+    } @else {
+      --aml-size-#{$size}: #{fns.rem($value)};
+    }
+  }
+}

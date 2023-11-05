@@ -1,0 +1,16 @@
+@use "../functions" as fns;
+@use "../variables";
+
+:root {
+  @each $easing, $variants in variables.$easings {
+    @each $variant, $value in $variants {
+      @if $variant == "reversed" {
+        @each $reversedVariant, $reversedValue in $value {
+          --#{fns.get-ns()}ease-#{$easing}-#{$reversedVariant}-reverse: #{$reversedValue};
+        }
+      } @else {
+        --#{fns.get-ns()}ease-#{$easing}-#{$variant}: #{$value};
+      }
+    }
+  }
+}

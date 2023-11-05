@@ -1,0 +1,9 @@
+@use "../variables";
+
+@function get-ns() {
+  @if variables.$namespace != "" {
+    @return "#{variables.$namespace}-";
+  }
+
+  @return "";
+}

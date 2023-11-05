@@ -1,9 +1,0 @@
-@use "../../settings";
-
-@function get-ns() {
-  @if settings.$namespace != "" {
-    @return "#{settings.$namespace}-";
-  }
-
-  @return "";
-}

@@ -1,0 +1,46 @@
+@use "sass:math";
+
+@use "./variables";
+@use "./functions" as fns;
+
+@forward "@amloop/aml-css/lib/abstract/properties";
+
+:root {
+  // -- Typography
+
+  // ---- General
+
+  --aml-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --aml-font-mono: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier,
+    monospace;
+  --aml-font-scale: #{math.div(variables.$base-font-size, 16)};
+  --aml-line-height: 1.5;
+  --aml-font-weight: 400;
+
+  // -- Colors
+
+  --aml-bg-color: transparent;
+  --aml-text-color: #000;
+  --aml-link-color: #3084bb;
+  --aml-link-color-hover: var(--aml-link-color);
+
+  // ---- Links
+
+  --aml-link-decoration: underline;
+  --aml-link-decoration-hover: none;
+
+  // -- Site width
+
+  // `--aml-max-site-width` is used to determine the container content width
+  --aml-min-site-width: #{fns.rem(variables.$min-site-width)};
+  --aml-max-site-width: #{fns.rem(variables.$max-site-width)};
+
+  --aml-margin: var(--aml-size-md);
+  --aml-padding: var(--aml-size-md);
+
+  // -- List variables
+
+  --aml-list-indentation: var(--aml-size-md);
+}

@@ -1,6 +1,6 @@
 # AML CSS
 
-This is a personal project, based on things like ITCSS and SUITCSS. Just for messing around with.
+This is a personal project, just for messing around with.
 
 ## Install
 
@@ -24,23 +24,20 @@ or
 npm exec aml-css create --output=src/styles
 ```
 
-For the moment it may still be necessary to manually alter some of the `@use` paths
-to point to the proper directory
-
 ### Manual
 
 Clone the repository somewhere in your project, then copy the contents of the `scaffold` directory to wherever you like, then customize import paths as needed.
 
 ## Recommended tooling
 
-- [PurgeCSS](https://purgecss.com/) - Remove unused classes or class variants
+- [PurgeCSS](https://purgecss.com/) - Remove unused classes or class variants - heavily recommended!
 
 ## Naming Conventions
 
 This mostly follows the [SUITCSS naming conventions](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md):
 
 - All classes (aside from state classes) can be namespaced
-  by overriding `settings.$namespace` from `./settings/_index.scss`
+  by overriding `$namespace` from `./src/abstract/_variables.scss`
 - Variables, functions, and mixins are snake-case
 - Objects are prefixed with `o-`, components are prefixed with `c-`
 - Objects and Components start in title-case, with sub-objects and sub-components being separated by a hyphen and
@@ -57,19 +54,15 @@ This mostly follows the [SUITCSS naming conventions](https://github.com/suitcss/
 
 ## Structure
 
-The structure used here is basically ITCSS (Inverted Triangle CSS).
-
-The order is as follows, from least specific to most specific:
-
-1. Settings (Set variables here)
-2. Tools (Sass functions/mixins are defined here)
-3. Generic (CSS Reset/Box-Sizing)
-4. Elements (Setting defaults for bare element selectors)
-5. Objects (Generic objects for common patterns, such as [the media object](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/))
-6. Components (Most styles will go here)
-7. Utilities (Utility classes, e.g. `.u-visuallyHidden`)
-8. Vendor code (3rd party libs)
-9. Overrides (Styles which need a high specificity, e.g. print styles)
+1. **Abstract**: Variables, root css properties, functions/mixins
+2. **Base**: CSS Reset/Box-Sizing, defaults for bare element selectors
+3. **Layout**: Main layout styles, e.g. Page Header, Main Nav, Footer
+4. **Pages**: Page-specific styles (e.g. Home page, About page, etc.)
+5. **Objects**: Generic objects for common patterns, such as [the media object](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/)
+6. **Components**: Re-usable classes go here
+7. **Utilities**: Utility classes, e.g. `.u-visuallyHidden`
+8. **Vendor**: 3rd party CSS goes here
+9. **Overrides**: Styles which need a high specificity, e.g. print styles, overrides of CSS from vendor code, etc.
 
 Any of the sections listed above may be omitted if not needed.
 
@@ -85,24 +78,24 @@ There are 3 breakpoint mixins provided by aml-css:
   max-width
 
 The `bp` and `bp-max` mixins share the same function signature of: `bp($breakpoint, $media)`,
-where `$breakpoint` can be a named breakpoint, as defined in `settings.$breakpoints`,
+where `$breakpoint` can be a named breakpoint, as defined in `variables.$breakpoints`,
 or alternatively a number with or without a unit.
 
 Numbers given without units
-are assumed to be pixels, and are converted to rem in the final output. `$media` is an optional parameter, defaulting to `settings.$default-media-type`.
+are assumed to be pixels, and are converted to rem in the final output. `$media` is an optional parameter, defaulting to `variables.$default-media-type`.
 
-The `bp-min-max` mixin's function signature is `bp-min-max($min-bp, $max-bp, $media)`. `$media` is an optional parameter, defaulting to `settings.$default-media-type`.
+The `bp-min-max` mixin's function signature is `bp-min-max($min-bp, $max-bp, $media)`. `$media` is an optional parameter, defaulting to `variables.$default-media-type`.
 
 ## Functions
 
 - ```scss
-  rem($pixels, $base-font-size: settings.$base-font-size)
+  rem($pixels, $base-font-size: variables.$base-font-size)
   ```
 
   Takes a unitless number `$pixels`, representing the desired size in pixels, and converts it to a rem unit.
 
 - ```scss
-  em($pixels, $base-font-size: settings.$base-font-size)
+  em($pixels, $base-font-size: variables.$base-font-size)
   ```
 
   Identical to `rem` above, but outputs an number with an em unit instead.
@@ -111,8 +104,8 @@ The `bp-min-max` mixin's function signature is `bp-min-max($min-bp, $max-bp, $me
   fluid-size(
     $min-size,
     $max-size,
-    $min-container-width: settings.$min-site-width,
-    $max-container-width: settings.$max-site-width,
+    $min-container-width: variables.$min-site-width,
+    $max-container-width: variables.$max-site-width,
     $unit: vw
   )
   ```
@@ -125,9 +118,17 @@ The `bp-min-max` mixin's function signature is `bp-min-max($min-bp, $max-bp, $me
 
 The format will output as follows: `.{prefix}-{namespace-}ClassName`.
 
-- `settings.$namespace`: The namespace for all classes (except state classes). Defaults to `""`.
+- `$namespace`: The namespace for all classes (except state classes). Defaults to `""`.
 
   When set, a hypen will automatically be used as a separator.
+
+  Can be set during the initial @forward/@use:
+
+  ```scss
+  @forward "src/abstract/variables" with (
+    $namespace: "NAMESPACE"
+  );
+  ```
 
 ### Colors
 
@@ -146,7 +147,7 @@ The following type-related variables are available to change:
   `"Helvetica Neue", Helvetica, Arial, sans-serif`.
 - `--aml-font-scale`: Used to calculate the base font size set on the `html` element.
   A value of `1` is equivalent to 16px. By default the scale is calculated as
-  `settings.$base-font-size / 16`.
+  `variables.$base-font-size / 16`.
 - `--aml-line-height`: sets the default line height for most text.
   Defaults to `1.5`.
 - `--aml-font-weight`: sets the default font weight for most text.
@@ -161,25 +162,47 @@ The following type-related variables are available to change:
 - `--aml-button-font-family`: sets the default font family for buttons.
   Defaults to `inherit`
 
-### Sizes and Spacing
+### Sizes
 
-- `--aml-min-site-width`: The minimum width of the site. Defaults to `settings.$min-site-width`
-- `--aml-max-site-width`: The maximum width of the site, used for the `.Container` object, along with the `max` breakpoint. Defaults to `settings.$max-site-width`
-- `--aml-spacing` and it's size variants. The size of `--aml-spacing` should be between
-  `--aml-spacing-sm` and `--aml-spacing-lg`
+- `--aml-min-site-width`: The minimum width of the site. Defaults to `variables.$min-site-width`
+- `--aml-max-site-width`: The maximum width of the site, used for the `.Container` object, along with the `max` breakpoint. Defaults to `variables.$max-site-width`
+- `$base-size` and it's size variants.
 
-  Defaults to:
+  Default sizes as defined in `src/abstract/_variables.scss`:
 
   ```scss
-  --aml-spacing: rem(20);
-  --aml-spacing-xs: calc(var(--aml-spacing) / 4);
-  --aml-spacing-sm: calc(var(--aml-spacing) / 2);
-  --aml-spacing-md: var(--aml-spacing);
-  --aml-spacing-lg: calc(var(--aml-spacing) * 2);
-  --aml-spacing-xl: calc(var(--aml-spacing) * 4);
+  $base-size: 20;
+
+  $sizes: (
+    default: $base-size,
+    xs: math.div($base-size, 4),
+    sm: math.div($base-size, 2),
+    md: $base-size,
+    lg: $base-size * 2,
+    xl: $base-size * 4,
+  );
   ```
 
-  The default ratios should allow you to just set `--aml-spacing` and still get reasonable output
+  Will generate:
+
+  ```scss
+  --aml-size: 1.25rem;
+  --aml-size-xs: 0.3125rem;
+  --aml-size-sm: 0.625rem;
+  --aml-size-md: 1.25rem;
+  --aml-size-lg: 2.5rem;
+  --aml-size-xl: 5rem;
+  ```
+
+  If you want to add or change breakpoints, override `additionalBreakpoints` as in the following example:
+
+  ```scss
+  @forward "src/abstract/variables" with (
+    $additionalSizes: (
+      xxl: 120,
+    )
+  );
+  ```
 
 - `--aml-margin` and `--aml-padding` set the amount of margin or
   padding to apply to certain elements by default.
@@ -197,18 +220,24 @@ The following type-related variables are available to change:
 
   ```scss
   $breakpoints = (
-    xs: rem(480),
-    sm: rem(680),
-    md: rem(768),
-    lg: rem(960),
-    xl: rem(1200),
-    max: rem(settings.$max-site-width),
-  );
+    xs: 480,
+    sm: 680,
+    md: 768,
+    lg: 960,
+    xl: 1200,
+    max: $max-site-width,
+  ) !default;
   ```
 
-  If you want to add custom breakpoints the map, use the sass built-in
-  [`map.merge`](https://sass-lang.com/documentation/modules/map#merge)
-  e.g. `settings.$breakpoints = map_merge(settings.$breakpoints, (large: rem(1600)));`
+  If you want to add or change breakpoints, override `additionalBreakpoints` as in the following example:
+
+  ```scss
+  @forward "src/abstract/variables" with (
+    $additionalBreakpoints: (
+      xxl: 1600,
+    )
+  );
+  ```
 
 ### Transition/Animation Easings
 
@@ -217,46 +246,51 @@ The following custom easings are defined for convenience: `sine`, `quad`,
 
 Each easing definition has an `in`, `out`, and `inOut` variant, along with a sub-map `reversed` with the same variants.
 
-All variations of the above follow the formatting below (with names substituted
-for `sine` in this example):
+These are defined in `src/abstract/_variables.scss` and can be overridden or added to like so:
 
 ```scss
-@use "tools/functions/easings";
-
-// Getting the normal variants
-easings.get(sine, in);
-easings.get(sine, out);
-easings.get(sine, inOut);
-
-// Getting the reversed variants
-easings.get(sine, in, true);
-easings.get(sine, out, true);
-easings.get(sine, inOut, true);
+@forward "src/abstract/variables" with (
+  $additionalEasings: (
+    sine: (
+      in: cubic-bezier(0.47, 0, 0.745, 0.715),
+      out: cubic-bezier(0.39, 0.575, 0.565, 1),
+      inOut: cubic-bezier(0.445, 0.05, 0.55, 0.95),
+      // The following key `reversed` is optional, but if defined
+      // is treated specially. It will generate custom properties
+      // ending in `-reverse`
+      reversed:
+        (
+          in: cubic-bezier(0.255, 0.285, 0.53, 1),
+          out: cubic-bezier(0.435, 0, 0.61, 0.425),
+          inOut: cubic-bezier(0.45, 0.05, 0.555, 0.95),
+        ),
+    ),
+  )
+);
 ```
 
-### Alternative forms
+The sass map will be transformed into CSS custom properties like so:
 
 ```scss
-@use "tools";
-
-tools.easings-get(sine, in);
+--ease-sine-in: cubic-bezier(0.47, 0, 0.745, 0.715);
+--ease-sine-out: cubic-bezier(0.39, 0.575, 0.565, 1);
 ```
 
-```scss
-@use "tools/functions";
-
-functions.easings-get(sine, in);
-```
+and so on.
 
 ### Base64-encoded Placeholder Images
 
-There are 4 of these by default, in 4 different aspect ratios (1:1, 2:1, 4:3,
-and 16:9). The color is transparent.
+There are 4 defined by default, in 4 different aspect ratios (1:1, 2:1, 4:3,
+and 16:9). They are transparent.
+
+These are defined in `src/abstract/_variables.scss` and can be overridden or added to like so:
 
 ```scss
-@use "tools/functions/placeholder-images" as img;
-
-img.get("1:1");
+@forward "src/abstract/variables" with (
+  $additionalPlaceholders: (
+    "16x10": "data:image/png;base64,...",
+  )
+);
 ```
 
 ## TODO

@@ -1,0 +1,27 @@
+@use "sass:map";
+
+@use "../variables";
+@use "rem" as *;
+
+@function get-breakpoint($breakpoint, $breakpoints: variables.$breakpoints) {
+  @if type-of($breakpoint) == number {
+    // If we're given a unitless number, assume it is the desired size
+    // in pixels, and convert it to rem
+    @if unitless($breakpoint) {
+      @return rem($breakpoint, 16);
+    }
+
+    // Otherwise return unchanged with the unit given
+    @return $breakpoint;
+  } @else if map.has-key($breakpoints, $breakpoint) {
+    $breakpointVal: map.get($breakpoints, $breakpoint);
+
+    @if unitless($breakpointVal) {
+      @return rem($breakpointVal, 16);
+    }
+
+    @return $breakpointVal;
+  }
+
+  @warn "No breakpoint found for `#{$breakpoint}`";
+}

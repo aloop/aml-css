@@ -1,0 +1,7 @@
+@use "../abstract/functions" as fns;
+
+.u-#{fns.get-ns()}clearfix::after {
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
+}

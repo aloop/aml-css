@@ -1,8 +1,0 @@
-@use "../settings";
-@use "../tools/functions" as fns;
-
-.u-#{fns.get-ns()}breakWord {
-  overflow-wrap: break-word !important;
-  word-wrap: break-word !important;
-  word-break: break-all !important;
-}
