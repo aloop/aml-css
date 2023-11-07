@@ -4,6 +4,7 @@
  * setting it on html and letting descendents simply inherit it.
  */
 
+/* purgecss start ignore */
 *,
 *::before,
 *::after {
@@ -13,3 +14,4 @@
 html {
   box-sizing: border-box;
 }
+/* purgecss end ignore */

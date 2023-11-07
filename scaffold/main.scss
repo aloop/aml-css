@@ -6,26 +6,24 @@
 
 @forward "abstract/properties";
 
-// 3 -- Base Definitions (resets, default element styles, etc.)
+// 3 -- Base (resets, default element styles, etc.)
 
-/* purgecss start ignore */
 @forward "@amloop/aml-css/lib/base";
-/* purgecss end ignore */
 
-// 4 -- Layout Definitions
+// 4 -- Layouts (header, footer, forms, etc.)
 
-// 5 -- Page Definitions
+// 5 -- Pages (page-specific styles)
 
 // 6 -- Objects
 
 @forward "@amloop/aml-css/lib/objects";
 
-// 7 -- Components
+// 7 -- Components (reusable styles)
 
-// 8 -- Utilities
+// 8 -- Utilities (utility classes)
 
 @forward "@amloop/aml-css/lib/utilities";
 
-// 9 -- Vendor
+// 9 -- Vendor (3rd-party css)
 
-// 10 -- Overrides
+// 10 -- Overrides (overrides, mainly intended for 3rd-party css)

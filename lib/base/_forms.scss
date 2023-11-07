@@ -1,5 +1,6 @@
 @use "../abstract/functions" as fns;
 
+/* purgecss start ignore */
 input,
 button,
 label {
@@ -9,3 +10,4 @@ label {
 textarea:where(:not([rows])) {
   min-height: fns.rem(160);
 }
+/* purgecss end ignore */

@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 img,
 picture,
 svg,
@@ -29,3 +30,4 @@ img:where([src$=".svg"]) {
   height: auto;
   max-width: none;
 }
+/* purgecss end ignore */
