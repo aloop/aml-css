@@ -1,9 +1,9 @@
 @use "sass:map";
 
-@forward "src/abstract/variables";
-@forward "src/abstract/functions";
-@forward "src/abstract/mixins";
-@forward "src/abstract/properties";
-@forward "src/base";
-@forward "src/objects";
-@forward "src/utilities";
+@forward "lib/abstract/variables";
+@forward "lib/abstract/functions";
+@forward "lib/abstract/mixins";
+@forward "lib/abstract/properties";
+@forward "lib/base";
+@forward "lib/objects";
+@forward "lib/utilities";
