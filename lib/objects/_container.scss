@@ -3,29 +3,39 @@
 @use "../abstract/mixins";
 
 .o-#{fns.get-ns()}Container {
-  --_container-gap: var(--aml-size-md);
+  --padding: var(--aml-size-md);
+  --breakout: var(--aml-size-xl);
+  --content: var(--aml-max-site-width);
+
+  --_breakout: minmax(0, var(--breakout));
+  --_content: min(100% - var(--padding) * 2, var(--content));
 
   display: grid;
   grid-template-columns:
-    [full-start] minmax(var(--_container-gap), 1fr) [wrapper-start] minmax(
-      0,
-      var(--aml-max-site-width)
-    )
-    [wrapper-end] minmax(var(--_container-gap), 1fr) [full-end];
+    [full-start] minmax(var(--padding), 1fr)
+    [breakout-start] var(--_breakout)
+    [content-start] var(--_content) [content-end]
+    var(--_breakout) [breakout-end]
+    minmax(var(--padding), 1fr) [full-end];
 
-  > :where(*) {
-    grid-column: wrapper;
+  > * {
+    grid-column: content;
+  }
+
+  // Allow children to breakout of the container a bit
+  > :where(.breakout) {
+    grid-column: breakout;
   }
 
   // Allow children to occupy the full width if needed
-  > :where(.is-full-width) {
+  > :where(.full-width) {
     grid-column: full;
   }
 }
 
 .o-#{fns.get-ns()}Container--flush {
   @include mixins.bp-variants {
-    --_container-gap: 0;
+    --padding: 0;
   }
 }
 
@@ -33,7 +43,7 @@
   @if $size != "default" {
     .o-#{fns.get-ns()}Container--#{$size} {
       @include mixins.bp-variants {
-        --_container-gap: var(--aml-size-#{$size});
+        --padding: var(--aml-size-#{$size});
       }
     }
   }
