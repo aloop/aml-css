@@ -1,10 +1,9 @@
-a {
+a:where([href]) {
   display: inline-block;
   text-decoration: var(--aml-link-decoration, none);
   color: var(--aml-link-color);
 
-  &:where(:hover),
-  &:where(:active) {
+  &:where(:hover, :active, :focus-within) {
     text-decoration: var(--aml-link-decoration-hover, none);
     color: var(--aml-link-color-hover, var(--aml-link-color));
   }
